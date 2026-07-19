@@ -1,0 +1,957 @@
+2026-07-18 21:13:01.618 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin/pending-submissions - null null
+2026-07-18 21:13:01.762 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/favicon.ico - null null
+2026-07-18 21:13:01.774 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-07-18 21:13:01.775 +05:30 [INF] HTTP GET /favicon.ico responded 404 in 2.5605 ms
+2026-07-18 21:13:01.793 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/favicon.ico - 404 0 null 30.7724ms
+2026-07-18 21:13:01.804 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:5100/favicon.ico, Response status code: 404
+2026-07-18 21:13:01.819 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-07-18 21:13:02.284 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`, `u0`.`Id`, `u0`.`Age`, `u0`.`CreatedAt`, `u0`.`DateOfBirth`, `u0`.`FatherName`, `u0`.`InternalScore`, `u0`.`Name`, `u0`.`Sex`, `u0`.`UpdatedAt`, `u0`.`UserId`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `user` AS `u` ON `s`.`UserId` = `u`.`Id`
+INNER JOIN `userProfiles` AS `u0` ON `s`.`UserProfileId` = `u0`.`Id`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+2026-07-18 21:13:02.314 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 21:13:02.442 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 608.1939ms
+2026-07-18 21:13:02.483 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-07-18 21:13:02.489 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 770.7433 ms
+2026-07-18 21:13:02.507 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin/pending-submissions - 200 null application/json; charset=utf-8 892.0016ms
+2026-07-18 21:13:02.519 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin/pending-submissions - null null
+2026-07-18 21:13:02.539 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-07-18 21:13:02.547 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-07-18 21:13:02.671 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`, `u0`.`Id`, `u0`.`Age`, `u0`.`CreatedAt`, `u0`.`DateOfBirth`, `u0`.`FatherName`, `u0`.`InternalScore`, `u0`.`Name`, `u0`.`Sex`, `u0`.`UpdatedAt`, `u0`.`UserId`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `user` AS `u` ON `s`.`UserId` = `u`.`Id`
+INNER JOIN `userProfiles` AS `u0` ON `s`.`UserProfileId` = `u0`.`Id`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+2026-07-18 21:13:02.690 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 21:13:02.702 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 151.5882ms
+2026-07-18 21:13:02.716 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-07-18 21:13:02.719 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 182.3189 ms
+2026-07-18 21:13:02.722 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin/pending-submissions - 200 null application/json; charset=utf-8 203.2462ms
+2026-07-18 22:47:45.005 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - null null
+2026-07-18 22:47:45.013 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:47:45.037 +05:30 [INF] Route matched with {action = "GetGurbaniItems", controller = "AdminCatalog"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGurbaniItems() on controller GINJ.Controllers.AdminCatalogController (GINJ).
+2026-07-18 22:47:45.172 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+2026-07-18 22:47:45.253 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 22:47:45.259 +05:30 [INF] Executed action GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ) in 217.4731ms
+2026-07-18 22:47:45.260 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:47:45.262 +05:30 [INF] HTTP GET /api/admin-catalog/gurbani-items responded 200 in 249.8312 ms
+2026-07-18 22:47:45.264 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - 200 null application/json; charset=utf-8 261.5482ms
+2026-07-18 22:47:45.276 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - null null
+2026-07-18 22:47:45.279 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:47:45.280 +05:30 [INF] Route matched with {action = "GetGurbaniItems", controller = "AdminCatalog"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGurbaniItems() on controller GINJ.Controllers.AdminCatalogController (GINJ).
+2026-07-18 22:47:45.285 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+2026-07-18 22:47:45.291 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 22:47:45.292 +05:30 [INF] Executed action GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ) in 10.705ms
+2026-07-18 22:47:45.294 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:47:45.295 +05:30 [INF] HTTP GET /api/admin-catalog/gurbani-items responded 200 in 16.0370 ms
+2026-07-18 22:47:45.298 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - 200 null application/json; charset=utf-8 22.7779ms
+2026-07-18 22:53:52.941 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - null null
+2026-07-18 22:53:52.948 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:53:52.949 +05:30 [INF] Route matched with {action = "GetGurbaniItems", controller = "AdminCatalog"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGurbaniItems() on controller GINJ.Controllers.AdminCatalogController (GINJ).
+2026-07-18 22:53:52.981 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+2026-07-18 22:53:52.985 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 22:53:52.988 +05:30 [INF] Executed action GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ) in 36.7767ms
+2026-07-18 22:53:52.989 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminCatalogController.GetGurbaniItems (GINJ)'
+2026-07-18 22:53:52.990 +05:30 [INF] HTTP GET /api/admin-catalog/gurbani-items responded 200 in 43.2154 ms
+2026-07-18 22:53:52.992 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/gurbani-items - 200 null application/json; charset=utf-8 51.4596ms
+2026-07-18 22:54:02.808 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/prizes - null null
+2026-07-18 22:54:02.810 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ)'
+2026-07-18 22:54:02.818 +05:30 [INF] Route matched with {action = "GetPrizes", controller = "AdminCatalog"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrizes() on controller GINJ.Controllers.AdminCatalogController (GINJ).
+2026-07-18 22:54:02.834 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+2026-07-18 22:54:02.836 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.PrizeList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 22:54:02.838 +05:30 [INF] Executed action GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ) in 18.2487ms
+2026-07-18 22:54:02.840 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ)'
+2026-07-18 22:54:02.841 +05:30 [INF] HTTP GET /api/admin-catalog/prizes responded 200 in 31.3325 ms
+2026-07-18 22:54:02.844 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/prizes - 200 null application/json; charset=utf-8 36.5303ms
+2026-07-18 22:54:03.158 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/prizes - null null
+2026-07-18 22:54:03.162 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ)'
+2026-07-18 22:54:03.164 +05:30 [INF] Route matched with {action = "GetPrizes", controller = "AdminCatalog"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrizes() on controller GINJ.Controllers.AdminCatalogController (GINJ).
+2026-07-18 22:54:03.168 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+2026-07-18 22:54:03.171 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.PrizeList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 22:54:03.172 +05:30 [INF] Executed action GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ) in 6.3903ms
+2026-07-18 22:54:03.174 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminCatalogController.GetPrizes (GINJ)'
+2026-07-18 22:54:03.175 +05:30 [INF] HTTP GET /api/admin-catalog/prizes responded 200 in 12.5866 ms
+2026-07-18 22:54:03.177 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/admin-catalog/prizes - 200 null application/json; charset=utf-8 18.8341ms
+2026-07-18 23:16:26.287 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/send-otp - null null
+2026-07-18 23:16:26.297 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:26.309 +05:30 [INF] HTTP OPTIONS /api/auth/send-otp responded 204 in 15.3001 ms
+2026-07-18 23:16:26.316 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/send-otp - 204 null null 29.0016ms
+2026-07-18 23:16:26.326 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/auth/send-otp - application/json 22
+2026-07-18 23:16:26.338 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:26.342 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.SendOtp (GINJ)'
+2026-07-18 23:16:26.365 +05:30 [INF] Route matched with {action = "SendOtp", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SendOtp(GINJ.DTOs.OtpRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-07-18 23:16:26.448 +05:30 [INF] Generated OTP for 7013679771: 456456
+2026-07-18 23:16:26.454 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType17`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:16:26.475 +05:30 [INF] Executed action GINJ.Controllers.AuthController.SendOtp (GINJ) in 103.9718ms
+2026-07-18 23:16:26.480 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.SendOtp (GINJ)'
+2026-07-18 23:16:26.483 +05:30 [INF] HTTP POST /api/auth/send-otp responded 200 in 145.3915 ms
+2026-07-18 23:16:26.491 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/auth/send-otp - 200 null application/json; charset=utf-8 164.6259ms
+2026-07-18 23:16:28.535 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/verify-otp - null null
+2026-07-18 23:16:28.541 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:28.543 +05:30 [INF] HTTP OPTIONS /api/auth/verify-otp responded 204 in 2.2045 ms
+2026-07-18 23:16:28.552 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/verify-otp - 204 null null 16.8139ms
+2026-07-18 23:16:28.565 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/auth/verify-otp - application/json 38
+2026-07-18 23:16:28.582 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:28.586 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.VerifyOtp (GINJ)'
+2026-07-18 23:16:28.592 +05:30 [INF] Route matched with {action = "VerifyOtp", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VerifyOtp(GINJ.DTOs.VerifyOtpRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-07-18 23:16:28.608 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType18`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:16:28.617 +05:30 [INF] Executed action GINJ.Controllers.AuthController.VerifyOtp (GINJ) in 20.5973ms
+2026-07-18 23:16:28.621 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.VerifyOtp (GINJ)'
+2026-07-18 23:16:28.624 +05:30 [INF] HTTP POST /api/auth/verify-otp responded 200 in 42.4876 ms
+2026-07-18 23:16:28.629 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/auth/verify-otp - 200 null application/json; charset=utf-8 64.273ms
+2026-07-18 23:16:28.677 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/signup - null null
+2026-07-18 23:16:28.686 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:28.689 +05:30 [INF] HTTP OPTIONS /api/auth/signup responded 204 in 2.8972 ms
+2026-07-18 23:16:28.698 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/signup - 204 null null 20.6969ms
+2026-07-18 23:16:28.712 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/auth/signup - application/json 65
+2026-07-18 23:16:28.719 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:28.722 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Signup (GINJ)'
+2026-07-18 23:16:28.739 +05:30 [INF] Route matched with {action = "Signup", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(GINJ.DTOs.SignupRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-07-18 23:16:28.961 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `user` AS `u`
+    WHERE `u`.`Phone` = @__request_Phone_0)
+2026-07-18 23:16:29.680 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 255), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `user` (`City`, `ConsentAccepted`, `CreatedAt`, `HouseOrFlatNo`, `PasswordHash`, `Phone`, `PhoneVerified`, `PinCode`, `RecipientName`, `SavedAddress`, `StreetOrLocality`, `UpdatedAt`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT `Id`
+FROM `user`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:16:29.906 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:16:29.926 +05:30 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType16`2[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:16:29.983 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Signup (GINJ) in 1239.66ms
+2026-07-18 23:16:29.992 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Signup (GINJ)'
+2026-07-18 23:16:29.996 +05:30 [INF] HTTP POST /api/auth/signup responded 201 in 1276.5601 ms
+2026-07-18 23:16:30.003 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/auth/signup - 201 null application/json; charset=utf-8 1291.0353ms
+2026-07-18 23:16:30.024 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/login - null null
+2026-07-18 23:16:30.032 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:30.035 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 3.0066 ms
+2026-07-18 23:16:30.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/auth/login - 204 null null 16.5591ms
+2026-07-18 23:16:30.050 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/auth/login - application/json 42
+2026-07-18 23:16:30.062 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:30.064 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-07-18 23:16:30.081 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-07-18 23:16:30.136 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-07-18 23:16:30.683 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-07-18 23:16:30.699 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 604.3187ms
+2026-07-18 23:16:30.702 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-07-18 23:16:30.705 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 643.7217 ms
+2026-07-18 23:16:30.709 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/auth/login - 200 null application/json; charset=utf-8 658.8632ms
+2026-07-18 23:16:30.720 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/by-user/1 - null null
+2026-07-18 23:16:30.728 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:30.731 +05:30 [INF] HTTP OPTIONS /api/userprofiles/by-user/1 responded 204 in 2.6935 ms
+2026-07-18 23:16:30.737 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/by-user/1 - 204 null null 17.4925ms
+2026-07-18 23:16:30.747 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/userprofiles/by-user/1 - application/json null
+2026-07-18 23:16:30.757 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:16:30.922 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UserProfilesController.GetByUser (GINJ)'
+2026-07-18 23:16:30.933 +05:30 [INF] Route matched with {action = "GetByUser", controller = "UserProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUser(Int64) on controller GINJ.Controllers.UserProfilesController (GINJ).
+2026-07-18 23:16:30.964 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`UserId` = @__userId_0
+2026-07-18 23:16:30.973 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.UserProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:16:30.978 +05:30 [INF] Executed action GINJ.Controllers.UserProfilesController.GetByUser (GINJ) in 38.4034ms
+2026-07-18 23:16:30.981 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UserProfilesController.GetByUser (GINJ)'
+2026-07-18 23:16:30.983 +05:30 [INF] HTTP GET /api/userprofiles/by-user/1 responded 200 in 226.1334 ms
+2026-07-18 23:16:30.993 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/userprofiles/by-user/1 - 200 null application/json; charset=utf-8 246.3784ms
+2026-07-18 23:18:16.940 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/create/1 - null null
+2026-07-18 23:18:16.952 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:16.954 +05:30 [INF] HTTP OPTIONS /api/userprofiles/create/1 responded 204 in 2.5217 ms
+2026-07-18 23:18:16.959 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/create/1 - 204 null null 18.2675ms
+2026-07-18 23:18:16.968 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/userprofiles/create/1 - application/json 114
+2026-07-18 23:18:16.975 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:16.981 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UserProfilesController.Create (GINJ)'
+2026-07-18 23:18:16.998 +05:30 [INF] Route matched with {action = "Create", controller = "UserProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int64, GINJ.DTOs.ChildProfileRequest) on controller GINJ.Controllers.UserProfilesController (GINJ).
+2026-07-18 23:18:17.108 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:18:17.121 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`UserId` = @__userId_0
+2026-07-18 23:18:17.232 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `userProfiles` (`Age`, `CreatedAt`, `DateOfBirth`, `FatherName`, `InternalScore`, `Name`, `Sex`, `UpdatedAt`, `UserId`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT `Id`
+FROM `userProfiles`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:18:17.267 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:18:17.284 +05:30 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType25`10[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:18:17.313 +05:30 [INF] Executed action GINJ.Controllers.UserProfilesController.Create (GINJ) in 296.9151ms
+2026-07-18 23:18:17.319 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UserProfilesController.Create (GINJ)'
+2026-07-18 23:18:17.322 +05:30 [INF] HTTP POST /api/userprofiles/create/1 responded 201 in 347.9305 ms
+2026-07-18 23:18:17.329 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/userprofiles/create/1 - 201 null application/json; charset=utf-8 361.001ms
+2026-07-18 23:18:20.831 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - null null
+2026-07-18 23:18:20.842 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:20.845 +05:30 [INF] HTTP OPTIONS /api/gurbanilist responded 204 in 3.3254 ms
+2026-07-18 23:18:20.853 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - 204 null null 22.0322ms
+2026-07-18 23:18:20.864 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - application/json null
+2026-07-18 23:18:20.872 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:20.876 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:18:20.889 +05:30 [INF] Route matched with {action = "GetAll", controller = "GurbaniList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.GurbaniListController (GINJ).
+2026-07-18 23:18:20.915 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`IsActive`
+2026-07-18 23:18:20.922 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:18:20.925 +05:30 [INF] Executed action GINJ.Controllers.GurbaniListController.GetAll (GINJ) in 32.8791ms
+2026-07-18 23:18:20.928 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:18:20.929 +05:30 [INF] HTTP GET /api/gurbanilist responded 200 in 57.0422 ms
+2026-07-18 23:18:20.932 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - 200 null application/json; charset=utf-8 67.68ms
+2026-07-18 23:18:20.976 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:18:20.983 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:20.985 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.0945 ms
+2026-07-18 23:18:20.989 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 13.3318ms
+2026-07-18 23:18:20.995 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:18:21.006 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:18:21.012 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:18:21.022 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:18:21.104 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:18:21.115 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:18:21.126 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 99.7782ms
+2026-07-18 23:18:21.131 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:18:21.134 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 128.1465 ms
+2026-07-18 23:18:21.140 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 144.3612ms
+2026-07-18 23:20:25.870 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:20:25.881 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:20:25.883 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 1.7803 ms
+2026-07-18 23:20:25.888 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 18.2818ms
+2026-07-18 23:20:25.898 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:20:25.905 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:20:25.910 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:20:25.914 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:20:25.929 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:20:25.936 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:20:25.940 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 20.6792ms
+2026-07-18 23:20:25.980 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:20:25.989 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 84.0334 ms
+2026-07-18 23:20:25.996 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 97.6469ms
+2026-07-18 23:20:26.059 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/30 - null null
+2026-07-18 23:20:26.067 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:20:26.070 +05:30 [INF] HTTP OPTIONS /api/prizelist/eligible/1/30 responded 204 in 2.5506 ms
+2026-07-18 23:20:26.075 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/30 - 204 null null 15.8779ms
+2026-07-18 23:20:26.084 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/30 - application/json null
+2026-07-18 23:20:26.094 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:20:26.097 +05:30 [INF] Executing endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:20:26.114 +05:30 [INF] Route matched with {action = "GetEligible", controller = "PrizeList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int64, Int64) on controller GINJ.Controllers.PrizeListController (GINJ).
+2026-07-18 23:20:26.194 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:20:26.270 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:20:26.303 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfile_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+WHERE (`p`.`IsActive` AND (`p`.`AvailableStock` > 0)) AND (@__userProfile_InternalScore_0 >= `p`.`Price`)
+2026-07-18 23:20:26.346 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.PrizeList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:20:26.355 +05:30 [INF] Executed action GINJ.Controllers.PrizeListController.GetEligible (GINJ) in 233.2969ms
+2026-07-18 23:20:26.360 +05:30 [INF] Executed endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:20:26.364 +05:30 [INF] HTTP GET /api/prizelist/eligible/1/30 responded 200 in 270.6858 ms
+2026-07-18 23:20:26.375 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/30 - 200 null application/json; charset=utf-8 291.1603ms
+2026-07-18 23:29:09.405 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:29:09.411 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:09.413 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.2018 ms
+2026-07-18 23:29:09.417 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 12.1754ms
+2026-07-18 23:29:09.424 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:29:09.431 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:09.435 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:09.438 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:29:09.486 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:29:09.491 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:29:09.493 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 51.3702ms
+2026-07-18 23:29:09.496 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:09.500 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 69.2299 ms
+2026-07-18 23:29:09.505 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 81.0126ms
+2026-07-18 23:29:27.567 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - null null
+2026-07-18 23:29:27.579 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:27.582 +05:30 [INF] HTTP OPTIONS /api/gurbanilist responded 204 in 2.3365 ms
+2026-07-18 23:29:27.589 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - 204 null null 21.5303ms
+2026-07-18 23:29:27.614 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - application/json null
+2026-07-18 23:29:27.620 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:27.623 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:29:27.626 +05:30 [INF] Route matched with {action = "GetAll", controller = "GurbaniList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.GurbaniListController (GINJ).
+2026-07-18 23:29:27.634 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`IsActive`
+2026-07-18 23:29:27.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:29:27.642 +05:30 [INF] Executed action GINJ.Controllers.GurbaniListController.GetAll (GINJ) in 12.5429ms
+2026-07-18 23:29:27.647 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:29:27.649 +05:30 [INF] HTTP GET /api/gurbanilist responded 200 in 29.2167 ms
+2026-07-18 23:29:27.654 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - 200 null application/json; charset=utf-8 39.5211ms
+2026-07-18 23:29:27.713 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:29:27.721 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:27.724 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.9077 ms
+2026-07-18 23:29:27.730 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 17.0091ms
+2026-07-18 23:29:27.739 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:29:27.746 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:27.750 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:27.754 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:29:27.768 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:29:27.776 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:29:27.781 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 18.487ms
+2026-07-18 23:29:27.786 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:27.789 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 42.4102 ms
+2026-07-18 23:29:27.794 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 55.217ms
+2026-07-18 23:29:43.452 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:29:43.460 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:43.463 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.6557 ms
+2026-07-18 23:29:43.476 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 24.0389ms
+2026-07-18 23:29:43.489 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:29:43.498 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:43.501 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:43.506 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:29:43.516 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:29:43.523 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:29:43.528 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 16.5723ms
+2026-07-18 23:29:43.531 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:29:43.534 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 35.7418 ms
+2026-07-18 23:29:43.538 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 49.2966ms
+2026-07-18 23:29:43.584 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/30 - null null
+2026-07-18 23:29:43.592 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:43.595 +05:30 [INF] HTTP OPTIONS /api/prizelist/eligible/1/30 responded 204 in 3.3470 ms
+2026-07-18 23:29:43.601 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/30 - 204 null null 16.4832ms
+2026-07-18 23:29:43.613 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/30 - application/json null
+2026-07-18 23:29:43.622 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:43.626 +05:30 [INF] Executing endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:29:43.630 +05:30 [INF] Route matched with {action = "GetEligible", controller = "PrizeList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int64, Int64) on controller GINJ.Controllers.PrizeListController (GINJ).
+2026-07-18 23:29:43.641 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:29:43.651 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:29:43.661 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfile_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+WHERE (`p`.`IsActive` AND (`p`.`AvailableStock` > 0)) AND (@__userProfile_InternalScore_0 >= `p`.`Price`)
+2026-07-18 23:29:43.669 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.PrizeList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:29:43.674 +05:30 [INF] Executed action GINJ.Controllers.PrizeListController.GetEligible (GINJ) in 39.2547ms
+2026-07-18 23:29:43.679 +05:30 [INF] Executed endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:29:43.680 +05:30 [INF] HTTP GET /api/prizelist/eligible/1/30 responded 200 in 58.6618 ms
+2026-07-18 23:29:43.688 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/30 - 200 null application/json; charset=utf-8 75.0079ms
+2026-07-18 23:29:57.056 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - null null
+2026-07-18 23:29:57.072 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:57.074 +05:30 [INF] HTTP OPTIONS /api/users/1 responded 204 in 2.5949 ms
+2026-07-18 23:29:57.082 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - 204 null null 26.3663ms
+2026-07-18 23:29:57.095 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - application/json null
+2026-07-18 23:29:57.103 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:29:57.106 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:29:57.114 +05:30 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int64) on controller GINJ.Controllers.UsersController (GINJ).
+2026-07-18 23:29:57.128 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:29:57.135 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType26`9[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:29:57.144 +05:30 [INF] Executed action GINJ.Controllers.UsersController.GetUser (GINJ) in 24.7595ms
+2026-07-18 23:29:57.147 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:29:57.151 +05:30 [INF] HTTP GET /api/users/1 responded 200 in 48.1395 ms
+2026-07-18 23:29:57.155 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - 200 null application/json; charset=utf-8 60.2626ms
+2026-07-18 23:30:22.050 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/address/1 - null null
+2026-07-18 23:30:22.058 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:22.060 +05:30 [INF] HTTP OPTIONS /api/users/address/1 responded 204 in 2.4318 ms
+2026-07-18 23:30:22.065 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/address/1 - 204 null null 15.2591ms
+2026-07-18 23:30:22.073 +05:30 [INF] Request starting HTTP/1.1 PUT http://127.0.0.1:5100/api/users/address/1 - application/json 130
+2026-07-18 23:30:22.078 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:22.082 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UsersController.UpdateAddress (GINJ)'
+2026-07-18 23:30:22.093 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int64, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.UsersController (GINJ).
+2026-07-18 23:30:22.116 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:30:22.151 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `user` SET `City` = @p0, `HouseOrFlatNo` = @p1, `PinCode` = @p2, `RecipientName` = @p3, `SavedAddress` = @p4, `StreetOrLocality` = @p5, `UpdatedAt` = @p6
+WHERE `Id` = @p7;
+SELECT ROW_COUNT();
+2026-07-18 23:30:22.167 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:30:22.186 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType14`8[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:30:22.198 +05:30 [INF] Executed action GINJ.Controllers.UsersController.UpdateAddress (GINJ) in 98.6096ms
+2026-07-18 23:30:22.202 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UsersController.UpdateAddress (GINJ)'
+2026-07-18 23:30:22.204 +05:30 [INF] HTTP PUT /api/users/address/1 responded 200 in 126.0429 ms
+2026-07-18 23:30:22.210 +05:30 [INF] Request finished HTTP/1.1 PUT http://127.0.0.1:5100/api/users/address/1 - 200 null application/json; charset=utf-8 136.9435ms
+2026-07-18 23:30:22.231 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/create/1 - null null
+2026-07-18 23:30:22.239 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:22.241 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 2.0912 ms
+2026-07-18 23:30:22.246 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/create/1 - 204 null null 14.3808ms
+2026-07-18 23:30:22.253 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/submissions/create/1 - application/json 193
+2026-07-18 23:30:22.260 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:22.262 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-07-18 23:30:22.275 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int64, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:30:22.302 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:30:22.312 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:30:22.323 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:30:22.351 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:30:22.401 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`Status` = 1)
+2026-07-18 23:30:22.477 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64), @__gurbaniId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `submissions` AS `s`
+    LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+    WHERE ((`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`GurbaniId` = @__gurbaniId_1)) AND (`d`.`Id` IS NOT NULL AND (`d`.`DeliveryStatus` = 2)))
+2026-07-18 23:30:22.508 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64), @__gurbaniId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`
+FROM `submissions` AS `s`
+WHERE ((`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`GurbaniId` = @__gurbaniId_1)) AND (`s`.`Status` = 2)
+ORDER BY `s`.`RejectedAt` DESC
+LIMIT 1
+2026-07-18 23:30:22.550 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (((`s`.`UserProfileId` = @__userProfileId_0) AND `s`.`IsActive`) AND (`s`.`Status` = 0)) AND (`d`.`Id` IS NULL OR ((`d`.`DeliveryStatus` <> 2) OR `d`.`DeliveryStatus` IS NULL))
+ORDER BY `s`.`CreatedAt` DESC
+LIMIT 1
+2026-07-18 23:30:22.758 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int64), @p3='?' (DbType = Int64), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int64), @p9='?' (DbType = Int64), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `submissions` (`Address`, `CreatedAt`, `GurbaniId`, `PrizeId`, `RejectedAt`, `ReviewNotes`, `Status`, `UpdatedAt`, `UserId`, `UserProfileId`, `WhatsAppNumber`, `WhatsAppTestDate`, `WhatsAppTestStatus`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`, `IsActive`
+FROM `submissions`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:30:22.795 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:30:22.804 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'GINJ.Models.Submission'.
+2026-07-18 23:30:22.841 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 561.1643ms
+2026-07-18 23:30:22.861 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-07-18 23:30:22.863 +05:30 [INF] HTTP POST /api/submissions/create/1 responded 201 in 603.3565 ms
+2026-07-18 23:30:22.869 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/submissions/create/1 - 201 null application/json; charset=utf-8 616.1893ms
+2026-07-18 23:30:22.976 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:30:22.990 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:22.992 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.2031 ms
+2026-07-18 23:30:22.997 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 20.9036ms
+2026-07-18 23:30:23.008 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:30:23.015 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:30:23.017 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:30:23.021 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:30:23.032 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:30:23.119 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:30:23.134 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 107.1701ms
+2026-07-18 23:30:23.138 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:30:23.140 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 125.0699 ms
+2026-07-18 23:30:23.144 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 136.4913ms
+2026-07-18 23:39:14.217 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:39:14.224 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:14.226 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.3390 ms
+2026-07-18 23:39:14.230 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 13.2863ms
+2026-07-18 23:39:14.238 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:39:14.245 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:14.249 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:14.252 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:39:14.336 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:39:14.343 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:39:14.350 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 92.2928ms
+2026-07-18 23:39:14.353 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:14.355 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 110.1884 ms
+2026-07-18 23:39:14.360 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 122.2838ms
+2026-07-18 23:39:29.353 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - null null
+2026-07-18 23:39:29.366 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:29.369 +05:30 [INF] HTTP OPTIONS /api/gurbanilist responded 204 in 3.2118 ms
+2026-07-18 23:39:29.375 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - 204 null null 21.5191ms
+2026-07-18 23:39:29.385 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - application/json null
+2026-07-18 23:39:29.397 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:29.403 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:39:29.409 +05:30 [INF] Route matched with {action = "GetAll", controller = "GurbaniList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.GurbaniListController (GINJ).
+2026-07-18 23:39:29.420 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`IsActive`
+2026-07-18 23:39:29.427 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:39:29.432 +05:30 [INF] Executed action GINJ.Controllers.GurbaniListController.GetAll (GINJ) in 16.7293ms
+2026-07-18 23:39:29.436 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:39:29.439 +05:30 [INF] HTTP GET /api/gurbanilist responded 200 in 41.9773 ms
+2026-07-18 23:39:29.445 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - 200 null application/json; charset=utf-8 59.2649ms
+2026-07-18 23:39:29.479 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:39:29.487 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:29.490 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.9459 ms
+2026-07-18 23:39:29.497 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 17.3272ms
+2026-07-18 23:39:29.507 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:39:29.514 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:29.519 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:29.526 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:39:29.535 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:39:29.544 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:39:29.549 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 16.9254ms
+2026-07-18 23:39:29.552 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:29.555 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 40.7413 ms
+2026-07-18 23:39:29.560 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 53.1734ms
+2026-07-18 23:39:43.604 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:39:43.611 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:43.615 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 3.2508 ms
+2026-07-18 23:39:43.622 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 18.2747ms
+2026-07-18 23:39:43.632 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:39:43.640 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:39:43.643 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:43.646 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:39:43.655 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:39:43.705 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:39:43.713 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 62.5437ms
+2026-07-18 23:39:43.717 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:39:43.720 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 80.8304 ms
+2026-07-18 23:39:43.727 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 94.7175ms
+2026-07-18 23:40:05.063 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:40:05.070 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:05.073 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 3.5246 ms
+2026-07-18 23:40:05.084 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 21.2814ms
+2026-07-18 23:40:05.101 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:05.111 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:05.115 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:05.118 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:05.127 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:05.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:05.139 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 16.6963ms
+2026-07-18 23:40:05.147 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:05.151 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 40.0486 ms
+2026-07-18 23:40:05.157 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 55.9602ms
+2026-07-18 23:40:14.398 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:40:14.404 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:14.406 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.1622 ms
+2026-07-18 23:40:14.411 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 13.5015ms
+2026-07-18 23:40:14.417 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:14.424 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:14.426 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:14.429 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:14.441 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:14.451 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:14.456 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 21.755ms
+2026-07-18 23:40:14.459 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:14.464 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 39.6340 ms
+2026-07-18 23:40:14.469 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 51.0713ms
+2026-07-18 23:40:19.653 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:40:19.666 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.668 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.7078 ms
+2026-07-18 23:40:19.673 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 19.6818ms
+2026-07-18 23:40:19.684 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:19.692 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.695 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:19.699 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:19.712 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:19.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:19.729 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 22.0285ms
+2026-07-18 23:40:19.732 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:19.734 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 42.6929 ms
+2026-07-18 23:40:19.739 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 54.804ms
+2026-07-18 23:40:19.776 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - null null
+2026-07-18 23:40:19.785 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.787 +05:30 [INF] HTTP OPTIONS /api/users/1 responded 204 in 2.2999 ms
+2026-07-18 23:40:19.792 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - 204 null null 16.1449ms
+2026-07-18 23:40:19.825 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - application/json null
+2026-07-18 23:40:19.836 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.842 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:40:19.845 +05:30 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int64) on controller GINJ.Controllers.UsersController (GINJ).
+2026-07-18 23:40:19.854 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:19.860 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType26`9[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:40:19.865 +05:30 [INF] Executed action GINJ.Controllers.UsersController.GetUser (GINJ) in 16.6667ms
+2026-07-18 23:40:19.868 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:40:19.871 +05:30 [INF] HTTP GET /api/users/1 responded 200 in 35.4708 ms
+2026-07-18 23:40:19.876 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - 200 null application/json; charset=utf-8 51.1375ms
+2026-07-18 23:40:19.890 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/by-user/1 - null null
+2026-07-18 23:40:19.898 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.900 +05:30 [INF] HTTP OPTIONS /api/userprofiles/by-user/1 responded 204 in 2.3219 ms
+2026-07-18 23:40:19.904 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/userprofiles/by-user/1 - 204 null null 14.5361ms
+2026-07-18 23:40:19.915 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/userprofiles/by-user/1 - application/json null
+2026-07-18 23:40:19.923 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.926 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UserProfilesController.GetByUser (GINJ)'
+2026-07-18 23:40:19.929 +05:30 [INF] Route matched with {action = "GetByUser", controller = "UserProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUser(Int64) on controller GINJ.Controllers.UserProfilesController (GINJ).
+2026-07-18 23:40:19.939 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`UserId` = @__userId_0
+2026-07-18 23:40:19.947 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.UserProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:19.951 +05:30 [INF] Executed action GINJ.Controllers.UserProfilesController.GetByUser (GINJ) in 15.8718ms
+2026-07-18 23:40:19.954 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UserProfilesController.GetByUser (GINJ)'
+2026-07-18 23:40:19.958 +05:30 [INF] HTTP GET /api/userprofiles/by-user/1 responded 200 in 35.5703 ms
+2026-07-18 23:40:19.964 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/userprofiles/by-user/1 - 200 null application/json; charset=utf-8 48.7718ms
+2026-07-18 23:40:19.973 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - null null
+2026-07-18 23:40:19.981 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:19.983 +05:30 [INF] HTTP OPTIONS /api/gurbanilist responded 204 in 2.3729 ms
+2026-07-18 23:40:19.989 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/gurbanilist - 204 null null 15.8351ms
+2026-07-18 23:40:19.998 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - application/json null
+2026-07-18 23:40:20.006 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:20.011 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:40:20.018 +05:30 [INF] Route matched with {action = "GetAll", controller = "GurbaniList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.GurbaniListController (GINJ).
+2026-07-18 23:40:20.039 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`IsActive`
+2026-07-18 23:40:20.046 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:20.051 +05:30 [INF] Executed action GINJ.Controllers.GurbaniListController.GetAll (GINJ) in 15.7636ms
+2026-07-18 23:40:20.054 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:40:20.057 +05:30 [INF] HTTP GET /api/gurbanilist responded 200 in 51.0256 ms
+2026-07-18 23:40:20.062 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - 200 null application/json; charset=utf-8 63.9761ms
+2026-07-18 23:40:23.617 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - application/json null
+2026-07-18 23:40:23.626 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:23.629 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:40:23.632 +05:30 [INF] Route matched with {action = "GetAll", controller = "GurbaniList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.GurbaniListController (GINJ).
+2026-07-18 23:40:23.641 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`IsActive`
+2026-07-18 23:40:23.648 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.GurbaniList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:23.653 +05:30 [INF] Executed action GINJ.Controllers.GurbaniListController.GetAll (GINJ) in 15.6257ms
+2026-07-18 23:40:23.656 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GurbaniListController.GetAll (GINJ)'
+2026-07-18 23:40:23.659 +05:30 [INF] HTTP GET /api/gurbanilist responded 200 in 33.0757 ms
+2026-07-18 23:40:23.664 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/gurbanilist - 200 null application/json; charset=utf-8 47.2216ms
+2026-07-18 23:40:23.752 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:23.761 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:23.764 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:23.768 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:23.779 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:23.787 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:23.795 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 20.0769ms
+2026-07-18 23:40:23.799 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:23.802 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 41.7787 ms
+2026-07-18 23:40:23.808 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 55.7201ms
+2026-07-18 23:40:51.742 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:40:51.749 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:51.751 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.2959 ms
+2026-07-18 23:40:51.756 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 14.6741ms
+2026-07-18 23:40:51.766 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:51.780 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:51.790 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:51.796 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:51.808 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:51.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:51.818 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 14.3239ms
+2026-07-18 23:40:51.820 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:51.825 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 44.7174 ms
+2026-07-18 23:40:51.830 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 63.7915ms
+2026-07-18 23:40:51.849 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/4 - null null
+2026-07-18 23:40:51.856 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:51.859 +05:30 [INF] HTTP OPTIONS /api/prizelist/eligible/1/4 responded 204 in 2.4418 ms
+2026-07-18 23:40:51.864 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/prizelist/eligible/1/4 - 204 null null 14.3259ms
+2026-07-18 23:40:51.873 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/4 - application/json null
+2026-07-18 23:40:51.879 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:51.882 +05:30 [INF] Executing endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:40:51.886 +05:30 [INF] Route matched with {action = "GetEligible", controller = "PrizeList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int64, Int64) on controller GINJ.Controllers.PrizeListController (GINJ).
+2026-07-18 23:40:51.895 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:51.904 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:51.912 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfile_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+WHERE (`p`.`IsActive` AND (`p`.`AvailableStock` > 0)) AND (@__userProfile_InternalScore_0 >= `p`.`Price`)
+2026-07-18 23:40:51.918 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.PrizeList, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:51.921 +05:30 [INF] Executed action GINJ.Controllers.PrizeListController.GetEligible (GINJ) in 30.2331ms
+2026-07-18 23:40:51.924 +05:30 [INF] Executed endpoint 'GINJ.Controllers.PrizeListController.GetEligible (GINJ)'
+2026-07-18 23:40:51.927 +05:30 [INF] HTTP GET /api/prizelist/eligible/1/4 responded 200 in 47.6421 ms
+2026-07-18 23:40:51.932 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/prizelist/eligible/1/4 - 200 null application/json; charset=utf-8 59.4046ms
+2026-07-18 23:40:55.374 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - null null
+2026-07-18 23:40:55.383 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:55.385 +05:30 [INF] HTTP OPTIONS /api/users/1 responded 204 in 2.8010 ms
+2026-07-18 23:40:55.392 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/1 - 204 null null 17.6834ms
+2026-07-18 23:40:55.402 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - application/json null
+2026-07-18 23:40:55.409 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:55.414 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:40:55.418 +05:30 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int64) on controller GINJ.Controllers.UsersController (GINJ).
+2026-07-18 23:40:55.428 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:55.436 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType26`9[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:40:55.440 +05:30 [INF] Executed action GINJ.Controllers.UsersController.GetUser (GINJ) in 15.76ms
+2026-07-18 23:40:55.444 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UsersController.GetUser (GINJ)'
+2026-07-18 23:40:55.447 +05:30 [INF] HTTP GET /api/users/1 responded 200 in 38.2696 ms
+2026-07-18 23:40:55.452 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/users/1 - 200 null application/json; charset=utf-8 50.8454ms
+2026-07-18 23:40:57.097 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/address/1 - null null
+2026-07-18 23:40:57.102 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.105 +05:30 [INF] HTTP OPTIONS /api/users/address/1 responded 204 in 2.5415 ms
+2026-07-18 23:40:57.108 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/users/address/1 - 204 null null 11.5048ms
+2026-07-18 23:40:57.116 +05:30 [INF] Request starting HTTP/1.1 PUT http://127.0.0.1:5100/api/users/address/1 - application/json 130
+2026-07-18 23:40:57.123 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.126 +05:30 [INF] Executing endpoint 'GINJ.Controllers.UsersController.UpdateAddress (GINJ)'
+2026-07-18 23:40:57.128 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int64, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.UsersController (GINJ).
+2026-07-18 23:40:57.135 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:57.148 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int64), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `user` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-07-18 23:40:57.158 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:40:57.169 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType14`8[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-18 23:40:57.173 +05:30 [INF] Executed action GINJ.Controllers.UsersController.UpdateAddress (GINJ) in 42.0562ms
+2026-07-18 23:40:57.177 +05:30 [INF] Executed endpoint 'GINJ.Controllers.UsersController.UpdateAddress (GINJ)'
+2026-07-18 23:40:57.182 +05:30 [INF] HTTP PUT /api/users/address/1 responded 200 in 59.5208 ms
+2026-07-18 23:40:57.186 +05:30 [INF] Request finished HTTP/1.1 PUT http://127.0.0.1:5100/api/users/address/1 - 200 null application/json; charset=utf-8 70.3409ms
+2026-07-18 23:40:57.203 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/create/1 - null null
+2026-07-18 23:40:57.212 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.215 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 2.7459 ms
+2026-07-18 23:40:57.221 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/create/1 - 204 null null 17.66ms
+2026-07-18 23:40:57.231 +05:30 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5100/api/submissions/create/1 - application/json 192
+2026-07-18 23:40:57.239 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.242 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-07-18 23:40:57.246 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int64, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:57.256 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`
+FROM `user` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:57.265 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`Age`, `u`.`CreatedAt`, `u`.`DateOfBirth`, `u`.`FatherName`, `u`.`InternalScore`, `u`.`Name`, `u`.`Sex`, `u`.`UpdatedAt`, `u`.`UserId`
+FROM `userProfiles` AS `u`
+WHERE `u`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:57.274 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`
+FROM `gurbaniList` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:57.285 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`
+FROM `prizeList` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-07-18 23:40:57.306 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`Status` = 1)
+2026-07-18 23:40:57.318 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64), @__gurbaniId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `submissions` AS `s`
+    LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+    WHERE ((`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`GurbaniId` = @__gurbaniId_1)) AND (`d`.`Id` IS NOT NULL AND (`d`.`DeliveryStatus` = 2)))
+2026-07-18 23:40:57.328 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64), @__gurbaniId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`
+FROM `submissions` AS `s`
+WHERE ((`s`.`UserProfileId` = @__userProfileId_0) AND (`s`.`GurbaniId` = @__gurbaniId_1)) AND (`s`.`Status` = 2)
+ORDER BY `s`.`RejectedAt` DESC
+LIMIT 1
+2026-07-18 23:40:57.335 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (((`s`.`UserProfileId` = @__userProfileId_0) AND `s`.`IsActive`) AND (`s`.`Status` = 0)) AND (`d`.`Id` IS NULL OR ((`d`.`DeliveryStatus` <> 2) OR `d`.`DeliveryStatus` IS NULL))
+ORDER BY `s`.`CreatedAt` DESC
+LIMIT 1
+2026-07-18 23:40:57.373 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int64), @p3='?' (DbType = Int64), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int64), @p9='?' (DbType = Int64), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `submissions` (`Address`, `CreatedAt`, `GurbaniId`, `PrizeId`, `RejectedAt`, `ReviewNotes`, `Status`, `UpdatedAt`, `UserId`, `UserProfileId`, `WhatsAppNumber`, `WhatsAppTestDate`, `WhatsAppTestStatus`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT `Id`, `IsActive`
+FROM `submissions`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:40:57.390 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-18 23:40:57.403 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'GINJ.Models.Submission'.
+2026-07-18 23:40:57.409 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 157.2922ms
+2026-07-18 23:40:57.415 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-07-18 23:40:57.418 +05:30 [INF] HTTP POST /api/submissions/create/1 responded 201 in 178.8538 ms
+2026-07-18 23:40:57.423 +05:30 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5100/api/submissions/create/1 - 201 null application/json; charset=utf-8 192.2874ms
+2026-07-18 23:40:57.542 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - null null
+2026-07-18 23:40:57.550 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.552 +05:30 [INF] HTTP OPTIONS /api/submissions/by-user-profile/1 responded 204 in 2.1943 ms
+2026-07-18 23:40:57.558 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 204 null null 16.3244ms
+2026-07-18 23:40:57.566 +05:30 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - application/json null
+2026-07-18 23:40:57.573 +05:30 [INF] CORS policy execution successful.
+2026-07-18 23:40:57.576 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:57.578 +05:30 [INF] Route matched with {action = "GetByUserProfile", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByUserProfile(Int64) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-07-18 23:40:57.590 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userProfileId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`UserProfileId` = @__userProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-07-18 23:40:57.597 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType22`12[[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-18 23:40:57.600 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ) in 16.8792ms
+2026-07-18 23:40:57.603 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByUserProfile (GINJ)'
+2026-07-18 23:40:57.606 +05:30 [INF] HTTP GET /api/submissions/by-user-profile/1 responded 200 in 33.1815 ms
+2026-07-18 23:40:57.611 +05:30 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5100/api/submissions/by-user-profile/1 - 200 null application/json; charset=utf-8 45.1501ms

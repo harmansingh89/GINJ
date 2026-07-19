@@ -1,0 +1,455 @@
+2026-07-17 20:25:56.465 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-07-17 20:25:57.652 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `gurbaniList` AS `g`)
+2026-07-17 20:25:57.681 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`)
+2026-07-17 20:25:57.771 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Drawing Pad')
+2026-07-17 20:25:57.783 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Toy Ball')
+2026-07-17 20:25:57.795 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Story Book')
+2026-07-17 20:25:58.240 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-17 20:25:58.692 +05:30 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://0.0.0.0:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-07-17 20:27:42.068 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-07-17 20:27:43.238 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `gurbaniList` AS `g`)
+2026-07-17 20:27:43.274 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`)
+2026-07-17 20:27:43.386 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Drawing Pad')
+2026-07-17 20:27:43.402 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Toy Ball')
+2026-07-17 20:27:43.414 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`
+    WHERE `p`.`Name` = 'Story Book')
+2026-07-17 20:27:43.928 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-17 20:27:44.358 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-07-17 20:27:44.975 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-17 20:27:44.978 +05:30 [INF] Hosting environment: Development
+2026-07-17 20:27:44.981 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-07-17 20:28:11.706 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-07-17 20:28:12.053 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-07-17 20:28:12.088 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-07-17 20:28:12.561 +05:30 [ERR] Failed executing DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`CreatedAt`, `s`.`GurbaniId`, `s`.`IsActive`, `s`.`PrizeId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`UserId`, `s`.`UserProfileId`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `u`.`Id`, `u`.`City`, `u`.`ConsentAccepted`, `u`.`CreatedAt`, `u`.`HouseOrFlatNo`, `u`.`PasswordHash`, `u`.`Phone`, `u`.`PhoneVerified`, `u`.`PinCode`, `u`.`RecipientName`, `u`.`SavedAddress`, `u`.`StreetOrLocality`, `u`.`UpdatedAt`, `u0`.`Id`, `u0`.`Age`, `u0`.`CreatedAt`, `u0`.`DateOfBirth`, `u0`.`FatherName`, `u0`.`InternalScore`, `u0`.`Name`, `u0`.`Sex`, `u0`.`UpdatedAt`, `u0`.`UserId`, `g`.`Id`, `g`.`AgeGroup`, `g`.`Description`, `g`.`IsActive`, `g`.`IsThisGurbani`, `g`.`Weightage`, `g`.`Title`, `g`.`YoutubeUrl`, `p`.`Id`, `p`.`AvailableStock`, `p`.`Description`, `p`.`EligibilityCriteria`, `p`.`ImageUrl`, `p`.`IsActive`, `p`.`Price`, `p`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `submissions` AS `s`
+INNER JOIN `user` AS `u` ON `s`.`UserId` = `u`.`Id`
+INNER JOIN `userProfiles` AS `u0` ON `s`.`UserProfileId` = `u0`.`Id`
+INNER JOIN `gurbaniList` AS `g` ON `s`.`GurbaniId` = `g`.`Id`
+INNER JOIN `prizeList` AS `p` ON `s`.`PrizeId` = `p`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+2026-07-17 20:28:12.706 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'GINJ.Data.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-07-17 22:13:59.561 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-17 22:13:59.609 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT GET_LOCK('__GINJ_EFMigrationsLock', 259200)
+2026-07-17 22:13:59.683 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:13:59.706 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GINJ' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-17 22:13:59.710 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-17 22:13:59.723 +05:30 [INF] Applying migration '20260717152510_InitialCreate'.
+2026-07-17 22:13:59.776 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2026-07-17 22:13:59.782 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `AuditLogs` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `EntityName` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `EntityId` longtext CHARACTER SET utf8mb4 NULL,
+    `Action` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ActorType` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ActorId` longtext CHARACTER SET utf8mb4 NULL,
+    `ActorName` longtext CHARACTER SET utf8mb4 NULL,
+    `RequestPath` longtext CHARACTER SET utf8mb4 NULL,
+    `ChangedColumns` longtext CHARACTER SET utf8mb4 NULL,
+    `OldValues` longtext CHARACTER SET utf8mb4 NULL,
+    `NewValues` longtext CHARACTER SET utf8mb4 NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    CONSTRAINT `PK_AuditLogs` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:43.045 +05:30 [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE `GINJ`;
+2026-07-17 22:17:56.091 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE DATABASE `GINJ`;
+2026-07-17 22:17:56.156 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-17 22:17:56.160 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT GET_LOCK('__GINJ_EFMigrationsLock', 259200)
+2026-07-17 22:17:56.252 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.271 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GINJ' AND TABLE_NAME='__EFMigrationsHistory';
+2026-07-17 22:17:56.279 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-07-17 22:17:56.291 +05:30 [INF] Applying migration '20260717152510_InitialCreate'.
+2026-07-17 22:17:56.327 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2026-07-17 22:17:56.347 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `AuditLogs` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `EntityName` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `EntityId` longtext CHARACTER SET utf8mb4 NULL,
+    `Action` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ActorType` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ActorId` longtext CHARACTER SET utf8mb4 NULL,
+    `ActorName` longtext CHARACTER SET utf8mb4 NULL,
+    `RequestPath` longtext CHARACTER SET utf8mb4 NULL,
+    `ChangedColumns` longtext CHARACTER SET utf8mb4 NULL,
+    `OldValues` longtext CHARACTER SET utf8mb4 NULL,
+    `NewValues` longtext CHARACTER SET utf8mb4 NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    CONSTRAINT `PK_AuditLogs` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.369 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `gurbaniList` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `Title` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Description` longtext CHARACTER SET utf8mb4 NULL,
+    `YoutubeUrl` longtext CHARACTER SET utf8mb4 NULL,
+    `IsThisGurbani` tinyint(1) NOT NULL,
+    `AgeGroup` longtext CHARACTER SET utf8mb4 NULL,
+    `Weightage` int NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_gurbaniList` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.397 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `prizeList` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `Name` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Description` longtext CHARACTER SET utf8mb4 NULL,
+    `ImageUrl` longtext CHARACTER SET utf8mb4 NULL,
+    `EligibilityCriteria` longtext CHARACTER SET utf8mb4 NULL,
+    `Price` int NOT NULL,
+    `AvailableStock` int NOT NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_prizeList` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.416 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `user` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `Phone` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `PasswordHash` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ConsentAccepted` tinyint(1) NOT NULL,
+    `PhoneVerified` tinyint(1) NOT NULL,
+    `RecipientName` longtext CHARACTER SET utf8mb4 NULL,
+    `HouseOrFlatNo` longtext CHARACTER SET utf8mb4 NULL,
+    `StreetOrLocality` longtext CHARACTER SET utf8mb4 NULL,
+    `City` longtext CHARACTER SET utf8mb4 NULL,
+    `PinCode` longtext CHARACTER SET utf8mb4 NULL,
+    `SavedAddress` longtext CHARACTER SET utf8mb4 NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    `UpdatedAt` datetime(6) NOT NULL,
+    CONSTRAINT `PK_user` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.454 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `userProfiles` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `UserId` bigint NOT NULL,
+    `Name` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `DateOfBirth` datetime(6) NOT NULL,
+    `Age` int NOT NULL,
+    `Sex` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `FatherName` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `InternalScore` int NOT NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    `UpdatedAt` datetime(6) NOT NULL,
+    CONSTRAINT `PK_userProfiles` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_userProfiles_user_UserId` FOREIGN KEY (`UserId`) REFERENCES `user` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.539 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `submissions` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `UserId` bigint NOT NULL,
+    `UserProfileId` bigint NOT NULL,
+    `GurbaniId` bigint NOT NULL,
+    `PrizeId` bigint NOT NULL,
+    `Address` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `Status` int NOT NULL,
+    `WhatsAppTestStatus` int NOT NULL,
+    `ReviewNotes` longtext CHARACTER SET utf8mb4 NULL,
+    `WhatsAppNumber` longtext CHARACTER SET utf8mb4 NULL,
+    `WhatsAppTestDate` datetime(6) NULL,
+    `RejectedAt` datetime(6) NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    `UpdatedAt` datetime(6) NOT NULL,
+    `IsActive` tinyint(1) NOT NULL DEFAULT TRUE,
+    CONSTRAINT `PK_submissions` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_submissions_gurbaniList_GurbaniId` FOREIGN KEY (`GurbaniId`) REFERENCES `gurbaniList` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_submissions_prizeList_PrizeId` FOREIGN KEY (`PrizeId`) REFERENCES `prizeList` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_submissions_userProfiles_UserProfileId` FOREIGN KEY (`UserProfileId`) REFERENCES `userProfiles` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_submissions_user_UserId` FOREIGN KEY (`UserId`) REFERENCES `user` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.582 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Dispatches` (
+    `Id` bigint NOT NULL AUTO_INCREMENT,
+    `SubmissionId` bigint NOT NULL,
+    `DocketNumber` longtext CHARACTER SET utf8mb4 NULL,
+    `DispatchedAt` datetime(6) NULL,
+    `DeliveryStatus` int NOT NULL,
+    `DeliveredAt` datetime(6) NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    `UpdatedAt` datetime(6) NOT NULL,
+    CONSTRAINT `PK_Dispatches` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Dispatches_submissions_SubmissionId` FOREIGN KEY (`SubmissionId`) REFERENCES `submissions` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+2026-07-17 22:17:56.603 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_AuditLogs_CreatedAt` ON `AuditLogs` (`CreatedAt`);
+2026-07-17 22:17:56.621 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_AuditLogs_EntityName` ON `AuditLogs` (`EntityName`);
+2026-07-17 22:17:56.644 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_Dispatches_SubmissionId` ON `Dispatches` (`SubmissionId`);
+2026-07-17 22:17:56.669 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_submissions_GurbaniId` ON `submissions` (`GurbaniId`);
+2026-07-17 22:17:56.693 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_submissions_PrizeId` ON `submissions` (`PrizeId`);
+2026-07-17 22:17:56.715 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_submissions_UserId` ON `submissions` (`UserId`);
+2026-07-17 22:17:56.740 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_submissions_UserProfileId` ON `submissions` (`UserProfileId`);
+2026-07-17 22:17:56.765 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX `IX_user_Phone` ON `user` (`Phone`);
+2026-07-17 22:17:56.786 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX `IX_userProfiles_UserId` ON `userProfiles` (`UserId`);
+2026-07-17 22:17:56.790 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260717152510_InitialCreate', '9.0.0');
+2026-07-17 22:17:56.795 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT RELEASE_LOCK('__GINJ_EFMigrationsLock')
+2026-07-17 22:17:56.971 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `gurbaniList` AS `g`)
+2026-07-17 22:17:57.046 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `prizeList` AS `p`)
+2026-07-17 22:17:57.164 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (DbType = Int32), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (DbType = Boolean), @p26='?' (DbType = Int32), @p27='?' (Size = 4000), @p28='?' (DbType = Int32), @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (Size = 4000), @p32='?' (DbType = Boolean), @p33='?' (DbType = Int32), @p34='?' (Size = 4000), @p35='?' (DbType = Int32), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (DbType = Boolean), @p40='?' (DbType = Int32), @p41='?' (Size = 4000), @p42='?' (DbType = Int32), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (Size = 4000), @p46='?' (DbType = Boolean), @p47='?' (DbType = Int32), @p48='?' (Size = 4000), @p49='?' (DbType = Int32), @p50='?' (Size = 4000), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (DbType = Boolean), @p54='?' (DbType = Int32), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (DbType = Boolean), @p61='?' (DbType = Int32), @p62='?' (Size = 4000), @p63='?' (DbType = Int32), @p64='?' (Size = 4000), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (DbType = Boolean), @p68='?' (DbType = Int32), @p69='?' (Size = 4000), @p70='?' (DbType = Int32), @p71='?' (Size = 4000), @p72='?' (Size = 4000), @p73='?' (Size = 4000), @p74='?' (DbType = Boolean), @p75='?' (DbType = Int32), @p76='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `gurbaniList` (`AgeGroup`, `Description`, `IsActive`, `IsThisGurbani`, `Weightage`, `Title`, `YoutubeUrl`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT `Id`
+FROM `gurbaniList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `gurbaniList` (`AgeGroup`, `Description`, `IsActive`, `IsThisGurbani`, `Weightage`, `Title`, `YoutubeUrl`)
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13);
+SELECT `Id`
+FROM `gurbaniList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `gurbaniList` (`AgeGroup`, `Description`, `IsActive`, `IsThisGurbani`, `Weightage`, `Title`, `YoutubeUrl`)
+VALUES (@p14, @p15, @p16, @p17, @p18, @p19, @p20);
+SELECT `Id`
+FROM `gurbaniList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p21, @p22, @p23, @p24, @p25, @p26, @p27);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p28, @p29, @p30, @p31, @p32, @p33, @p34);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p35, @p36, @p37, @p38, @p39, @p40, @p41);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p42, @p43, @p44, @p45, @p46, @p47, @p48);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p49, @p50, @p51, @p52, @p53, @p54, @p55);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p56, @p57, @p58, @p59, @p60, @p61, @p62);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p63, @p64, @p65, @p66, @p67, @p68, @p69);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `prizeList` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `Price`, `Name`)
+VALUES (@p70, @p71, @p72, @p73, @p74, @p75, @p76);
+SELECT `Id`
+FROM `prizeList`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-17 22:17:57.248 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime), @p17='?' (Size = 4000), @p18='?' (Size = 255), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = DateTime), @p28='?' (Size = 4000), @p29='?' (Size = 255), @p30='?' (Size = 4000), @p31='?' (Size = 4000), @p32='?' (Size = 4000), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (Size = 4000), @p36='?' (Size = 4000), @p37='?' (Size = 4000), @p38='?' (DbType = DateTime), @p39='?' (Size = 4000), @p40='?' (Size = 255), @p41='?' (Size = 4000), @p42='?' (Size = 4000), @p43='?' (Size = 4000), @p44='?' (Size = 4000), @p45='?' (Size = 4000), @p46='?' (Size = 4000), @p47='?' (Size = 4000), @p48='?' (Size = 4000), @p49='?' (DbType = DateTime), @p50='?' (Size = 4000), @p51='?' (Size = 255), @p52='?' (Size = 4000), @p53='?' (Size = 4000), @p54='?' (Size = 4000), @p55='?' (Size = 4000), @p56='?' (Size = 4000), @p57='?' (Size = 4000), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (DbType = DateTime), @p61='?' (Size = 4000), @p62='?' (Size = 255), @p63='?' (Size = 4000), @p64='?' (Size = 4000), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (Size = 4000), @p70='?' (Size = 4000), @p71='?' (DbType = DateTime), @p72='?' (Size = 4000), @p73='?' (Size = 255), @p74='?' (Size = 4000), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (Size = 4000), @p78='?' (Size = 4000), @p79='?' (Size = 4000), @p80='?' (Size = 4000), @p81='?' (Size = 4000), @p82='?' (DbType = DateTime), @p83='?' (Size = 4000), @p84='?' (Size = 255), @p85='?' (Size = 4000), @p86='?' (Size = 4000), @p87='?' (Size = 4000), @p88='?' (Size = 4000), @p89='?' (Size = 4000), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (Size = 4000), @p93='?' (DbType = DateTime), @p94='?' (Size = 4000), @p95='?' (Size = 255), @p96='?' (Size = 4000), @p97='?' (Size = 4000), @p98='?' (Size = 4000), @p99='?' (Size = 4000), @p100='?' (Size = 4000), @p101='?' (Size = 4000), @p102='?' (Size = 4000), @p103='?' (Size = 4000), @p104='?' (DbType = DateTime), @p105='?' (Size = 4000), @p106='?' (Size = 255), @p107='?' (Size = 4000), @p108='?' (Size = 4000), @p109='?' (Size = 4000), @p110='?' (Size = 4000), @p111='?' (Size = 4000), @p112='?' (Size = 4000), @p113='?' (Size = 4000), @p114='?' (Size = 4000), @p115='?' (DbType = DateTime), @p116='?' (Size = 4000), @p117='?' (Size = 255), @p118='?' (Size = 4000), @p119='?' (Size = 4000), @p120='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p44, @p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p66, @p67, @p68, @p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, @p96, @p97, @p98);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107, @p108, @p109);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p110, @p111, @p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, @p120);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-07-17 22:17:57.321 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-17 22:17:57.462 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-07-17 22:17:57.463 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-17 22:17:57.464 +05:30 [INF] Hosting environment: Development
+2026-07-17 22:17:57.465 +05:30 [INF] Content root path: D:\Projects\GINJ\api

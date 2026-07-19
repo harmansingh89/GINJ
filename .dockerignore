@@ -1,0 +1,10 @@
+**/bin
+**/obj
+**/.git
+**/.vs
+**/node_modules
+**/build
+*.log
+*.user
+*.suo
+*.db

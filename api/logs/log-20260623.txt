@@ -1,0 +1,961 @@
+2026-06-23 00:02:34.551 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/gifts/upload-image - multipart/form-data; boundary=----WebKitFormBoundarykPaBIwmnQ0utWFQx 254
+2026-06-23 00:02:34.568 +05:30 [INF] CORS policy execution successful.
+2026-06-23 00:02:34.590 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-06-23 00:02:34.602 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-23 00:02:34.607 +05:30 [INF] HTTP POST /api/gifts/upload-image responded 401 in 38.3710 ms
+2026-06-23 00:02:34.613 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/gifts/upload-image - 401 0 null 62.3234ms
+2026-06-23 00:06:28.947 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-23 00:06:28.959 +05:30 [INF] CORS policy execution successful.
+2026-06-23 00:06:28.964 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-23 00:06:28.971 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-23 00:06:29.008 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-23 00:06:29.014 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 00:06:29.017 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 41.1339ms
+2026-06-23 00:06:29.021 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-23 00:06:29.023 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 64.3309 ms
+2026-06-23 00:06:29.027 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 80.5036ms
+2026-06-23 00:06:29.037 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-23 00:06:29.041 +05:30 [INF] CORS policy execution successful.
+2026-06-23 00:06:29.043 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-23 00:06:29.044 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-23 00:06:29.051 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-23 00:06:29.055 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 00:06:29.056 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 7.8134ms
+2026-06-23 00:06:29.058 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-23 00:06:29.060 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 18.9464 ms
+2026-06-23 00:06:29.064 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 26.8158ms
+2026-06-23 00:21:49.468 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-06-23 00:21:50.126 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rhymes` AS `r`)
+2026-06-23 00:21:50.151 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`)
+2026-06-23 00:21:50.223 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Drawing Pad')
+2026-06-23 00:21:50.234 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Toy Ball')
+2026-06-23 00:21:50.242 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Story Book')
+2026-06-23 00:21:50.396 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 00:21:50.537 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-06-23 00:21:50.538 +05:30 [INF] Now listening on: https://0.0.0.0:5001
+2026-06-23 00:21:50.541 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 00:21:50.543 +05:30 [INF] Hosting environment: Development
+2026-06-23 00:21:50.544 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-06-23 00:25:15.514 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/gifts/upload-image - multipart/form-data; boundary=------------------------QRUmScKuJLDPB4MlYnVYQZ 270
+2026-06-23 00:25:15.593 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.UploadImage (GINJ)'
+2026-06-23 00:25:15.639 +05:30 [INF] Route matched with {action = "UploadImage", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-23 00:25:15.737 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 00:25:15.795 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.UploadImage (GINJ) in 141.2292ms
+2026-06-23 00:25:15.814 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.UploadImage (GINJ)'
+2026-06-23 00:25:15.821 +05:30 [INF] HTTP POST /api/gifts/upload-image responded 200 in 250.9685 ms
+2026-06-23 00:25:15.835 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/gifts/upload-image - 200 null application/json; charset=utf-8 324.422ms
+2026-06-23 23:04:08.470 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-06-23 23:04:09.435 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rhymes` AS `r`)
+2026-06-23 23:04:09.466 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`)
+2026-06-23 23:04:09.573 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Drawing Pad')
+2026-06-23 23:04:09.590 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Toy Ball')
+2026-06-23 23:04:09.605 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Story Book')
+2026-06-23 23:04:10.052 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 23:04:10.468 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-06-23 23:04:10.473 +05:30 [INF] Now listening on: https://0.0.0.0:5001
+2026-06-23 23:04:11.051 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 23:04:11.054 +05:30 [INF] Hosting environment: Development
+2026-06-23 23:04:11.057 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-06-23 23:04:11.760 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2026-06-23 23:04:12.348 +05:30 [INF] HTTP GET / responded 404 in 205.1259 ms
+2026-06-23 23:04:12.373 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 404 0 null 641.1432ms
+2026-06-23 23:04:12.390 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5001/, Response status code: 404
+2026-06-23 23:04:15.764 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-23 23:04:15.941 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 177.8719ms
+2026-06-23 23:04:15.987 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-23 23:04:15.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-23 23:04:16.028 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 41.0264ms
+2026-06-23 23:04:16.076 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.594ms
+2026-06-23 23:04:16.306 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-23 23:04:16.400 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.6892ms
+2026-06-23 23:04:16.966 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2026-06-23 23:04:17.004 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-06-23 23:04:17.014 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 49.0502ms
+2026-06-23 23:04:17.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-23 23:04:17.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 45.0504ms
+2026-06-23 23:04:17.546 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-23 23:04:17.546 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-23 23:04:17.554 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 7.8701ms
+2026-06-23 23:04:17.596 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.2633ms
+2026-06-23 23:04:17.768 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-23 23:04:17.811 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.3335ms
+2026-06-23 23:28:37.723 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-23 23:28:37.765 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:37.774 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 34.5024 ms
+2026-06-23 23:28:37.782 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 63.0477ms
+2026-06-23 23:28:37.798 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 42
+2026-06-23 23:28:37.839 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:37.849 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:37.927 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-23 23:28:38.612 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-23 23:28:39.304 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:28:39.341 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 1388.38ms
+2026-06-23 23:28:39.349 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:39.358 +05:30 [INF] HTTP POST /api/auth/login responded 401 in 1520.3644 ms
+2026-06-23 23:28:39.392 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 401 null application/json; charset=utf-8 1595.3143ms
+2026-06-23 23:28:50.733 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-23 23:28:50.741 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:50.743 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.3190 ms
+2026-06-23 23:28:50.748 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 15.3586ms
+2026-06-23 23:28:50.750 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 42
+2026-06-23 23:28:50.761 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:50.767 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:50.772 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-23 23:28:51.062 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-23 23:28:51.397 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:28:51.400 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 623.4352ms
+2026-06-23 23:28:51.405 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:51.408 +05:30 [INF] HTTP POST /api/auth/login responded 401 in 646.9978 ms
+2026-06-23 23:28:51.414 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 401 null application/json; charset=utf-8 663.5898ms
+2026-06-23 23:28:58.273 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-23 23:28:58.279 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:58.281 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.2701 ms
+2026-06-23 23:28:58.286 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 12.3933ms
+2026-06-23 23:28:58.289 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-23 23:28:58.297 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:58.299 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:58.302 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-23 23:28:58.315 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-23 23:28:58.930 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-23 23:28:58.941 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 633.0434ms
+2026-06-23 23:28:58.946 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:28:58.951 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 654.5189 ms
+2026-06-23 23:28:58.956 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 667.6569ms
+2026-06-23 23:28:58.970 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-23 23:28:58.979 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:58.983 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 4.4817 ms
+2026-06-23 23:28:58.990 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 20.0581ms
+2026-06-23 23:28:58.998 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-23 23:28:59.017 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:28:59.223 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-23 23:28:59.245 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-23 23:28:59.306 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-23 23:28:59.382 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:28:59.421 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 169.3693ms
+2026-06-23 23:28:59.426 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-23 23:28:59.430 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 413.4438 ms
+2026-06-23 23:28:59.437 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 439.0395ms
+2026-06-23 23:29:02.880 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-23 23:29:02.888 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:29:02.891 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.9135 ms
+2026-06-23 23:29:02.895 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 14.9335ms
+2026-06-23 23:29:02.899 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-23 23:29:02.913 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:29:02.918 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-23 23:29:02.933 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-23 23:29:02.970 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-23 23:29:03.022 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:29:03.044 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 103.4951ms
+2026-06-23 23:29:03.056 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-23 23:29:03.060 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 147.0805 ms
+2026-06-23 23:29:03.064 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 165.3713ms
+2026-06-23 23:29:03.083 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-23 23:29:03.091 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:29:03.093 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 2.5856 ms
+2026-06-23 23:29:03.099 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 15.7527ms
+2026-06-23 23:29:03.103 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-23 23:29:03.120 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:29:03.124 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:29:03.143 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:29:03.488 +05:30 [ERR] Failed executing DbCommand (21ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-23 23:29:03.650 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'GINJ.Data.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-06-23 23:29:04.791 +05:30 [ERR] Failed to retrieve submissions for child 1
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Repositories.SubmissionRepository.GetByChildAsync(Int32 childProfileId) in D:\Projects\GINJ\api\Repositories\SubmissionRepository.cs:line 28
+   at GINJ.Controllers.SubmissionsController.GetByChild(Int32 childId) in D:\Projects\GINJ\api\Controllers\SubmissionsController.cs:line 60
+2026-06-23 23:29:04.871 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:29:04.876 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 1726.7052ms
+2026-06-23 23:29:04.881 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:29:04.886 +05:30 [ERR] HTTP GET /api/submissions/by-child/1 responded 500 in 1765.6216 ms
+2026-06-23 23:29:04.891 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 500 null application/json; charset=utf-8 1788.4508ms
+2026-06-23 23:30:13.766 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-23 23:30:13.791 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:13.794 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 2.7599 ms
+2026-06-23 23:30:13.799 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 33.6595ms
+2026-06-23 23:30:13.805 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-23 23:30:13.814 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:13.821 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:30:13.826 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:30:13.868 +05:30 [ERR] Failed executing DbCommand (11ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-23 23:30:13.885 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'GINJ.Data.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-06-23 23:30:14.478 +05:30 [ERR] Failed to retrieve submissions for child 1
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Repositories.SubmissionRepository.GetByChildAsync(Int32 childProfileId) in D:\Projects\GINJ\api\Repositories\SubmissionRepository.cs:line 28
+   at GINJ.Controllers.SubmissionsController.GetByChild(Int32 childId) in D:\Projects\GINJ\api\Controllers\SubmissionsController.cs:line 60
+2026-06-23 23:30:14.510 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:14.519 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 677.9611ms
+2026-06-23 23:30:14.524 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:30:14.529 +05:30 [ERR] HTTP GET /api/submissions/by-child/1 responded 500 in 714.7836 ms
+2026-06-23 23:30:14.539 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 500 null application/json; charset=utf-8 733.4457ms
+2026-06-23 23:30:14.556 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/3 - null null
+2026-06-23 23:30:14.567 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:14.571 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/3 responded 204 in 4.3421 ms
+2026-06-23 23:30:14.577 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/3 - 204 null null 21.5503ms
+2026-06-23 23:30:14.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/3 - application/json null
+2026-06-23 23:30:14.616 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:14.620 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-23 23:30:14.660 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-23 23:30:14.819 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:14.854 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:14.894 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-23 23:30:14.956 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:30:14.972 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 244.468ms
+2026-06-23 23:30:14.977 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-23 23:30:14.984 +05:30 [INF] HTTP GET /api/gifts/eligible/1/3 responded 200 in 368.4202 ms
+2026-06-23 23:30:14.991 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/3 - 200 null application/json; charset=utf-8 407.6338ms
+2026-06-23 23:30:19.239 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - null null
+2026-06-23 23:30:19.248 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:19.250 +05:30 [INF] HTTP OPTIONS /api/parents/1 responded 204 in 2.0798 ms
+2026-06-23 23:30:19.256 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - 204 null null 17.2534ms
+2026-06-23 23:30:19.260 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/parents/1 - application/json null
+2026-06-23 23:30:19.276 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:19.280 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-23 23:30:19.293 +05:30 [INF] Route matched with {action = "GetParent", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParent(Int32) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-23 23:30:19.329 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:19.338 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:19.351 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.GetParent (GINJ) in 50.5784ms
+2026-06-23 23:30:19.355 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-23 23:30:19.359 +05:30 [INF] HTTP GET /api/parents/1 responded 200 in 82.9149 ms
+2026-06-23 23:30:19.366 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/parents/1 - 200 null application/json; charset=utf-8 105.8194ms
+2026-06-23 23:30:21.041 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - null null
+2026-06-23 23:30:21.048 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:21.050 +05:30 [INF] HTTP OPTIONS /api/parents/address/1 responded 204 in 2.9088 ms
+2026-06-23 23:30:21.055 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - 204 null null 13.8632ms
+2026-06-23 23:30:21.058 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/parents/address/1 - application/json 126
+2026-06-23 23:30:21.070 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:21.074 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:30:21.089 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int32, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-23 23:30:21.119 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:21.499 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Parents` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-06-23 23:30:21.843 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-23 23:30:21.942 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`8[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:21.956 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.UpdateAddress (GINJ) in 860.9731ms
+2026-06-23 23:30:21.960 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:30:21.964 +05:30 [INF] HTTP PUT /api/parents/address/1 responded 200 in 893.5569 ms
+2026-06-23 23:30:21.971 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/parents/address/1 - 200 null application/json; charset=utf-8 913.4648ms
+2026-06-23 23:30:21.997 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - null null
+2026-06-23 23:30:22.008 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:22.012 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 4.2059 ms
+2026-06-23 23:30:22.022 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - 204 null null 24.4477ms
+2026-06-23 23:30:22.025 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/submissions/create/1 - application/json 186
+2026-06-23 23:30:22.040 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:22.043 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:30:22.058 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int32, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:30:22.108 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:22.122 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:22.182 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:22.213 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:22.267 +05:30 [ERR] Failed executing DbCommand (6ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 1)
+2026-06-23 23:30:22.283 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'GINJ.Data.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-06-23 23:30:22.883 +05:30 [ERR] Failed to create submission for parent 1
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Repositories.SubmissionRepository.GetExistingApprovedForChildAsync(Int32 childProfileId) in D:\Projects\GINJ\api\Repositories\SubmissionRepository.cs:line 65
+   at GINJ.Controllers.SubmissionsController.Create(Int32 parentId, SubmissionRequest request) in D:\Projects\GINJ\api\Controllers\SubmissionsController.cs:line 119
+2026-06-23 23:30:22.925 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:22.933 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 869.3564ms
+2026-06-23 23:30:22.938 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:30:22.941 +05:30 [ERR] HTTP POST /api/submissions/create/1 responded 500 in 901.2295 ms
+2026-06-23 23:30:22.948 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/submissions/create/1 - 500 null application/json; charset=utf-8 922.6657ms
+2026-06-23 23:30:37.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-23 23:30:37.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 28.6906ms
+2026-06-23 23:30:37.482 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-23 23:30:37.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 6.3916ms
+2026-06-23 23:30:37.515 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-23 23:30:37.540 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.0397ms
+2026-06-23 23:30:37.669 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-23 23:30:37.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.3357ms
+2026-06-23 23:30:40.727 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - null null
+2026-06-23 23:30:40.735 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:40.738 +05:30 [INF] HTTP OPTIONS /api/parents/address/1 responded 204 in 3.0749 ms
+2026-06-23 23:30:40.743 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - 204 null null 15.8856ms
+2026-06-23 23:30:40.747 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/parents/address/1 - application/json 126
+2026-06-23 23:30:40.758 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:40.763 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:30:40.767 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int32, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-23 23:30:40.778 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:40.794 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Parents` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-06-23 23:30:40.811 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-23 23:30:40.826 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`8[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:40.832 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.UpdateAddress (GINJ) in 60.6681ms
+2026-06-23 23:30:40.836 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:30:40.839 +05:30 [INF] HTTP PUT /api/parents/address/1 responded 200 in 80.9142 ms
+2026-06-23 23:30:40.845 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/parents/address/1 - 200 null application/json; charset=utf-8 98.3834ms
+2026-06-23 23:30:40.883 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - null null
+2026-06-23 23:30:40.898 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:40.902 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 4.6493 ms
+2026-06-23 23:30:40.911 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - 204 null null 28.0973ms
+2026-06-23 23:30:40.917 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/submissions/create/1 - application/json 186
+2026-06-23 23:30:40.933 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:30:40.938 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:30:40.941 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int32, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:30:40.958 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:40.971 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:40.984 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:40.994 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:30:41.009 +05:30 [ERR] Failed executing DbCommand (5ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 1)
+2026-06-23 23:30:41.025 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'GINJ.Data.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-06-23 23:30:41.693 +05:30 [ERR] Failed to create submission for parent 1
+MySqlConnector.MySqlException (0x80004005): Unknown column 's.WhatsAppNumber' in 'field list'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1081
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 131
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 487
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Repositories.SubmissionRepository.GetExistingApprovedForChildAsync(Int32 childProfileId) in D:\Projects\GINJ\api\Repositories\SubmissionRepository.cs:line 65
+   at GINJ.Controllers.SubmissionsController.Create(Int32 parentId, SubmissionRequest request) in D:\Projects\GINJ\api\Controllers\SubmissionsController.cs:line 119
+2026-06-23 23:30:41.720 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:30:41.723 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 773.7539ms
+2026-06-23 23:30:41.727 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:30:41.731 +05:30 [ERR] HTTP POST /api/submissions/create/1 responded 500 in 797.8741 ms
+2026-06-23 23:30:41.739 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/submissions/create/1 - 500 null application/json; charset=utf-8 822.4068ms
+2026-06-23 23:37:28.384 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-06-23 23:37:28.466 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT GET_LOCK('__GINJ_EFMigrationsLock', 259200)
+2026-06-23 23:37:28.565 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2026-06-23 23:37:28.599 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='GINJ' AND TABLE_NAME='__EFMigrationsHistory';
+2026-06-23 23:37:28.606 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2026-06-23 23:37:28.620 +05:30 [INF] Applying migration '20260623173052_AddWhatsAppTestFields'.
+2026-06-23 23:37:28.715 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Submissions` ADD `WhatsAppNumber` longtext CHARACTER SET utf8mb4 NULL;
+2026-06-23 23:37:28.759 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Submissions` ADD `WhatsAppTestDate` datetime(6) NULL;
+2026-06-23 23:37:28.768 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20260623173052_AddWhatsAppTestFields', '9.0.0');
+2026-06-23 23:37:28.783 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT RELEASE_LOCK('__GINJ_EFMigrationsLock')
+2026-06-23 23:40:57.735 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-06-23 23:40:58.692 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rhymes` AS `r`)
+2026-06-23 23:40:58.721 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`)
+2026-06-23 23:40:58.817 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Drawing Pad')
+2026-06-23 23:40:58.833 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Toy Ball')
+2026-06-23 23:40:58.847 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Story Book')
+2026-06-23 23:40:59.223 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-23 23:40:59.812 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-06-23 23:40:59.816 +05:30 [INF] Now listening on: https://0.0.0.0:5001
+2026-06-23 23:40:59.965 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-23 23:40:59.969 +05:30 [INF] Hosting environment: Development
+2026-06-23 23:40:59.972 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-06-23 23:41:00.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2026-06-23 23:41:04.133 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-23 23:41:06.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-23 23:41:06.343 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 2205.6674ms
+2026-06-23 23:41:06.432 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 91.9061ms
+2026-06-23 23:41:06.445 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-23 23:41:06.664 +05:30 [INF] HTTP GET / responded 404 in 5264.2654 ms
+2026-06-23 23:41:06.676 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 499 null null 5732.2547ms
+2026-06-23 23:41:06.693 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5001/, Response status code: 499
+2026-06-23 23:41:06.715 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 270.3612ms
+2026-06-23 23:41:06.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-23 23:41:06.933 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.5955ms
+2026-06-23 23:41:13.697 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-23 23:41:13.725 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:13.736 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 19.8543 ms
+2026-06-23 23:41:13.745 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 48.1159ms
+2026-06-23 23:41:13.755 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-23 23:41:13.792 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:13.799 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:41:13.885 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-23 23:41:14.386 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-23 23:41:15.125 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-23 23:41:15.153 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 1249.1378ms
+2026-06-23 23:41:15.159 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-23 23:41:15.166 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 1375.1777 ms
+2026-06-23 23:41:15.190 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 1434.8664ms
+2026-06-23 23:41:15.191 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-23 23:41:15.206 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:15.209 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 2.8326 ms
+2026-06-23 23:41:15.215 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 24.5592ms
+2026-06-23 23:41:15.221 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-23 23:41:15.239 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:15.407 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-23 23:41:15.424 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-23 23:41:15.730 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-23 23:41:15.797 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:15.833 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 402.9514ms
+2026-06-23 23:41:15.838 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-23 23:41:15.841 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 602.6485 ms
+2026-06-23 23:41:15.848 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 626.4694ms
+2026-06-23 23:41:18.325 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-23 23:41:18.336 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:18.338 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.4854 ms
+2026-06-23 23:41:18.344 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 19.0535ms
+2026-06-23 23:41:18.349 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-23 23:41:18.360 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:18.365 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-23 23:41:18.388 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-23 23:41:18.432 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-23 23:41:18.486 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:18.498 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 103.5678ms
+2026-06-23 23:41:18.502 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-23 23:41:18.506 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 145.1525 ms
+2026-06-23 23:41:18.513 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 164.5821ms
+2026-06-23 23:41:18.540 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-23 23:41:18.549 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:18.552 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 3.7652 ms
+2026-06-23 23:41:18.558 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 17.8473ms
+2026-06-23 23:41:18.563 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-23 23:41:18.581 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:18.586 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:18.601 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:41:18.950 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-23 23:41:19.270 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:19.325 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 718.306ms
+2026-06-23 23:41:19.332 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:19.340 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 758.1549 ms
+2026-06-23 23:41:19.349 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 785.8079ms
+2026-06-23 23:41:44.620 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-23 23:41:44.628 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:44.631 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 3.0206 ms
+2026-06-23 23:41:44.636 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 16.1842ms
+2026-06-23 23:41:44.639 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-23 23:41:44.654 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:44.659 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:44.662 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:41:44.694 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-23 23:41:44.703 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:44.708 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 41.4132ms
+2026-06-23 23:41:44.712 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:44.715 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 60.8912 ms
+2026-06-23 23:41:44.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 80.276ms
+2026-06-23 23:41:44.764 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/4 - null null
+2026-06-23 23:41:44.772 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:44.775 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/4 responded 204 in 2.7259 ms
+2026-06-23 23:41:44.781 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/4 - 204 null null 17.3815ms
+2026-06-23 23:41:44.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/4 - application/json null
+2026-06-23 23:41:44.810 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:44.813 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-23 23:41:44.827 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-23 23:41:44.891 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:44.917 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:44.954 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-23 23:41:44.966 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:44.978 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 146.8579ms
+2026-06-23 23:41:44.982 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-23 23:41:44.986 +05:30 [INF] HTTP GET /api/gifts/eligible/1/4 responded 200 in 176.5064 ms
+2026-06-23 23:41:44.994 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/4 - 200 null application/json; charset=utf-8 208.4875ms
+2026-06-23 23:41:54.230 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - null null
+2026-06-23 23:41:54.236 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:54.239 +05:30 [INF] HTTP OPTIONS /api/parents/1 responded 204 in 3.0147 ms
+2026-06-23 23:41:54.244 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - 204 null null 13.6839ms
+2026-06-23 23:41:54.249 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/parents/1 - application/json null
+2026-06-23 23:41:54.263 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:54.266 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-23 23:41:54.276 +05:30 [INF] Route matched with {action = "GetParent", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParent(Int32) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-23 23:41:54.309 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:54.318 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:41:54.326 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.GetParent (GINJ) in 44.1199ms
+2026-06-23 23:41:54.331 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-23 23:41:54.335 +05:30 [INF] HTTP GET /api/parents/1 responded 200 in 72.3867 ms
+2026-06-23 23:41:54.340 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/parents/1 - 200 null application/json; charset=utf-8 90.9146ms
+2026-06-23 23:41:56.004 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - null null
+2026-06-23 23:41:56.016 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:56.019 +05:30 [INF] HTTP OPTIONS /api/parents/address/1 responded 204 in 2.8221 ms
+2026-06-23 23:41:56.023 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - 204 null null 19.1433ms
+2026-06-23 23:41:56.026 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/parents/address/1 - application/json 126
+2026-06-23 23:41:56.036 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:56.039 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:41:56.050 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int32, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-23 23:41:56.078 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:56.351 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Parents` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-06-23 23:41:56.706 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-23 23:41:56.797 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`8[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-23 23:41:56.807 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.UpdateAddress (GINJ) in 752.0388ms
+2026-06-23 23:41:56.811 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-23 23:41:56.815 +05:30 [INF] HTTP PUT /api/parents/address/1 responded 200 in 779.1429 ms
+2026-06-23 23:41:56.822 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/parents/address/1 - 200 null application/json; charset=utf-8 795.4678ms
+2026-06-23 23:41:56.840 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - null null
+2026-06-23 23:41:56.848 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:56.851 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 2.8665 ms
+2026-06-23 23:41:56.857 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - 204 null null 17.7906ms
+2026-06-23 23:41:56.863 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/submissions/create/1 - application/json 186
+2026-06-23 23:41:56.881 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:56.884 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:41:56.899 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int32, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:41:56.952 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:56.966 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:57.011 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:57.040 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-23 23:41:57.087 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 1)
+2026-06-23 23:41:57.188 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32), @__rhymeId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Submissions` AS `s`
+    LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+    WHERE ((`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`RhymeId` = @__rhymeId_1)) AND (`d`.`Id` IS NOT NULL AND (`d`.`DeliveryStatus` = 2)))
+2026-06-23 23:41:57.226 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32), @__rhymeId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`
+FROM `Submissions` AS `s`
+WHERE ((`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`RhymeId` = @__rhymeId_1)) AND (`s`.`Status` = 2)
+ORDER BY `s`.`RejectedAt` DESC
+LIMIT 1
+2026-06-23 23:41:57.264 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 0)
+ORDER BY `s`.`CreatedAt` DESC
+LIMIT 1
+2026-06-23 23:41:57.430 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p2='?' (DbType = DateTime), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Dispatches` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+
+UPDATE `Submissions` SET `UpdatedAt` = @p2, `WhatsAppNumber` = @p3, `WhatsAppTestDate` = @p4
+WHERE `Id` = @p5;
+SELECT ROW_COUNT();
+2026-06-23 23:41:57.486 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime), @p17='?' (Size = 4000), @p18='?' (Size = 255), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-23 23:41:57.501 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.Models.Submission'.
+2026-06-23 23:41:57.549 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 643.4347ms
+2026-06-23 23:41:57.554 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-23 23:41:57.558 +05:30 [INF] HTTP POST /api/submissions/create/1 responded 200 in 677.6734 ms
+2026-06-23 23:41:57.564 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/submissions/create/1 - 200 null application/json; charset=utf-8 701.3313ms
+2026-06-23 23:41:57.660 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-23 23:41:57.666 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:57.667 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.2816 ms
+2026-06-23 23:41:57.673 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 12.6639ms
+2026-06-23 23:41:57.677 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-23 23:41:57.686 +05:30 [INF] CORS policy execution successful.
+2026-06-23 23:41:57.689 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:57.693 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-23 23:41:57.706 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-23 23:41:57.713 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-23 23:41:57.718 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 21.1428ms
+2026-06-23 23:41:57.722 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-23 23:41:57.726 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 39.5382 ms
+2026-06-23 23:41:57.731 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 54.7006ms

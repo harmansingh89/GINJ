@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  api:
+    container_name: ginj-api
+    build:
+      context: ./api
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=server=db;port=3306;database=ginj;user=ginj;password=GinjPassword123!;
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
+
+  admin-ui:
+    container_name: ginj-admin-ui
+    build:
+      context: ./admin-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+  db:
+    container_name: ginjdb
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ginj
+      MYSQL_USER: ginj
+      MYSQL_PASSWORD: GinjPassword123!
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

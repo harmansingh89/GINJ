@@ -1,0 +1,1229 @@
+2026-06-24 01:48:21.320 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 01:48:21.351 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.357 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 7.0062 ms
+2026-06-24 01:48:21.367 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 46.3104ms
+2026-06-24 01:48:21.371 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 01:48:21.387 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.402 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-06-2026 20:11:15', Current time (UTC): '23-06-2026 20:18:21'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-06-24 01:48:21.473 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-06-2026 20:11:15', Current time (UTC): '23-06-2026 20:18:21'.
+2026-06-24 01:48:21.474 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 01:48:21.477 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 01:48:21.589 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 01:48:21.597 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 01:48:21.608 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 120.8398ms
+2026-06-24 01:48:21.620 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 01:48:21.622 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 235.0408 ms
+2026-06-24 01:48:21.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 254.5839ms
+2026-06-24 01:48:21.633 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 01:48:21.642 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.643 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.4547 ms
+2026-06-24 01:48:21.654 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 20.9705ms
+2026-06-24 01:48:21.657 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 01:48:21.668 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.671 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-06-2026 20:11:15', Current time (UTC): '23-06-2026 20:18:21'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-06-24 01:48:21.676 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23-06-2026 20:11:15', Current time (UTC): '23-06-2026 20:18:21'.
+2026-06-24 01:48:21.686 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-06-24 01:48:21.706 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-24 01:48:21.708 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 401 in 40.3166 ms
+2026-06-24 01:48:21.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 401 0 null 62.1253ms
+2026-06-24 01:48:21.727 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/refresh-token - null null
+2026-06-24 01:48:21.737 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.739 +05:30 [INF] HTTP OPTIONS /api/auth/refresh-token responded 204 in 2.2092 ms
+2026-06-24 01:48:21.744 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/refresh-token - 204 null null 17.0789ms
+2026-06-24 01:48:21.749 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/refresh-token - application/json 235
+2026-06-24 01:48:21.768 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:21.771 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.RefreshToken (GINJ)'
+2026-06-24 01:48:21.786 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RefreshToken(GINJ.DTOs.RefreshTokenRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-24 01:48:21.865 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 01:48:21.876 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 01:48:21.889 +05:30 [INF] Executed action GINJ.Controllers.AuthController.RefreshToken (GINJ) in 98.6924ms
+2026-06-24 01:48:21.894 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.RefreshToken (GINJ)'
+2026-06-24 01:48:21.904 +05:30 [INF] HTTP POST /api/auth/refresh-token responded 200 in 136.0120 ms
+2026-06-24 01:48:21.906 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/refresh-token - 200 null application/json; charset=utf-8 157.1259ms
+2026-06-24 01:48:21.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 01:48:22.190 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:22.454 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 01:48:22.555 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 01:48:22.572 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 01:48:22.589 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 01:48:22.601 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 43.9558ms
+2026-06-24 01:48:22.608 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 01:48:22.611 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 420.6550 ms
+2026-06-24 01:48:22.621 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 703.8512ms
+2026-06-24 01:48:47.871 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 01:48:47.878 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:47.880 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 1.9547 ms
+2026-06-24 01:48:47.884 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 12.7638ms
+2026-06-24 01:48:47.887 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 01:48:47.895 +05:30 [INF] CORS policy execution successful.
+2026-06-24 01:48:47.898 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 01:48:47.902 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 01:48:47.914 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 01:48:47.920 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 01:48:47.925 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 16.177ms
+2026-06-24 01:48:47.928 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 01:48:47.930 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 34.1529 ms
+2026-06-24 01:48:47.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 48.603ms
+2026-06-24 02:05:21.263 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 02:05:21.313 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:05:21.316 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.5819 ms
+2026-06-24 02:05:21.321 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 57.599ms
+2026-06-24 02:05:21.325 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 02:05:21.336 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:05:21.339 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:05:21.342 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 02:05:21.403 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 02:05:21.410 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 02:05:21.414 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 66.8779ms
+2026-06-24 02:05:21.418 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:05:21.421 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 84.7539 ms
+2026-06-24 02:05:21.427 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 101.3152ms
+2026-06-24 02:24:22.125 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 02:24:22.152 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:24:22.157 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 4.5705 ms
+2026-06-24 02:24:22.167 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 42.0811ms
+2026-06-24 02:24:22.173 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 02:24:22.187 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:24:22.190 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:24:22.194 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 02:24:22.247 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 02:24:22.255 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 02:24:22.260 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 60.235ms
+2026-06-24 02:24:22.265 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:24:22.268 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 81.1448 ms
+2026-06-24 02:24:22.275 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 102.0552ms
+2026-06-24 02:25:09.723 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 02:25:09.756 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:25:09.763 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 7.5412 ms
+2026-06-24 02:25:09.771 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 48.8381ms
+2026-06-24 02:25:09.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 02:25:09.792 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:25:09.796 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:25:09.800 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 02:25:09.815 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 02:25:09.822 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 02:25:09.828 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 20.5468ms
+2026-06-24 02:25:09.833 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:25:09.837 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 44.7180 ms
+2026-06-24 02:25:09.849 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 71.581ms
+2026-06-24 02:32:35.715 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 02:32:35.727 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:32:35.729 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 1.3222 ms
+2026-06-24 02:32:35.734 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 18.7818ms
+2026-06-24 02:32:35.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 02:32:35.789 +05:30 [INF] CORS policy execution successful.
+2026-06-24 02:32:35.792 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:32:35.796 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 02:32:35.855 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 02:32:35.862 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 02:32:35.867 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 62.4669ms
+2026-06-24 02:32:35.871 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 02:32:35.874 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 84.8524 ms
+2026-06-24 02:32:35.879 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 105.5292ms
+2026-06-24 17:48:23.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-24 17:48:23.804 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 162.2363ms
+2026-06-24 17:48:23.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-24 17:48:23.849 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 12.9294ms
+2026-06-24 17:48:23.860 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-24 17:48:23.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.0874ms
+2026-06-24 17:48:24.032 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-24 17:48:24.117 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.0195ms
+2026-06-24 18:02:08.212 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-24 18:02:08.240 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:02:08.241 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.5826 ms
+2026-06-24 18:02:08.244 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 32.0575ms
+2026-06-24 18:02:08.261 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-24 18:02:08.288 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:02:08.291 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 18:02:08.295 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-24 18:02:08.394 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-24 18:02:08.720 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-24 18:02:08.725 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 420.8496ms
+2026-06-24 18:02:08.729 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 18:02:08.735 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 446.5070 ms
+2026-06-24 18:02:08.742 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 487.6925ms
+2026-06-24 18:02:08.778 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-24 18:02:08.784 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:02:08.786 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 2.2056 ms
+2026-06-24 18:02:08.791 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 13.1391ms
+2026-06-24 18:02:08.795 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-24 18:02:08.808 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:02:08.818 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:02:08.821 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-24 18:02:08.837 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-24 18:02:08.845 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:02:08.850 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 24.0671ms
+2026-06-24 18:02:08.854 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:02:08.856 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 48.0193 ms
+2026-06-24 18:02:08.864 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 68.1614ms
+2026-06-24 18:14:40.207 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 18:14:40.218 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:14:40.219 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.6735 ms
+2026-06-24 18:14:40.220 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 13.6967ms
+2026-06-24 18:14:40.226 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 18:14:40.228 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:14:40.229 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:14:40.231 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 18:14:40.265 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 18:14:40.270 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:14:40.273 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 38.5017ms
+2026-06-24 18:14:40.275 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:14:40.276 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 48.2761 ms
+2026-06-24 18:14:40.278 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 52.9944ms
+2026-06-24 18:34:07.944 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-24 18:34:07.988 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:07.989 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.8149 ms
+2026-06-24 18:34:07.991 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 46.5669ms
+2026-06-24 18:34:07.992 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-24 18:34:07.999 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:08.002 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 18:34:08.002 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-24 18:34:08.040 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-24 18:34:08.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-24 18:34:08.172 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 167.1196ms
+2026-06-24 18:34:08.174 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 18:34:08.175 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 175.5544 ms
+2026-06-24 18:34:08.176 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 183.7487ms
+2026-06-24 18:34:08.187 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-24 18:34:08.191 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:08.191 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 0.7371 ms
+2026-06-24 18:34:08.193 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 6.1566ms
+2026-06-24 18:34:08.194 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-24 18:34:08.200 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:08.201 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:34:08.202 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-24 18:34:08.206 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-24 18:34:08.207 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:08.208 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 5.0806ms
+2026-06-24 18:34:08.209 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:34:08.210 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 10.6396 ms
+2026-06-24 18:34:08.213 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 19.2821ms
+2026-06-24 18:34:23.911 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 18:34:23.915 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:23.916 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.9050 ms
+2026-06-24 18:34:23.917 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 6.3652ms
+2026-06-24 18:34:23.920 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 18:34:23.922 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:23.923 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:23.924 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 18:34:23.930 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 18:34:23.932 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:23.933 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 7.8469ms
+2026-06-24 18:34:23.934 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:23.935 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 13.4200 ms
+2026-06-24 18:34:23.937 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 17.2432ms
+2026-06-24 18:34:23.963 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 18:34:23.965 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:23.966 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 0.9027 ms
+2026-06-24 18:34:23.968 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 5.1001ms
+2026-06-24 18:34:23.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 18:34:23.971 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:23.972 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:23.974 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 18:34:23.988 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 18:34:23.993 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:23.998 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 23.1844ms
+2026-06-24 18:34:24.001 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:24.002 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 30.4734 ms
+2026-06-24 18:34:24.003 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 34.3853ms
+2026-06-24 18:34:40.035 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 18:34:40.038 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:40.039 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.1304 ms
+2026-06-24 18:34:40.041 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 6.0677ms
+2026-06-24 18:34:40.044 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 18:34:40.046 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:40.047 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:40.048 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 18:34:40.052 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 18:34:40.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:40.055 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 6.1809ms
+2026-06-24 18:34:40.056 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:40.057 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 11.1944 ms
+2026-06-24 18:34:40.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 15.4781ms
+2026-06-24 18:34:48.125 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 18:34:48.129 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.131 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.1889 ms
+2026-06-24 18:34:48.132 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 7.1014ms
+2026-06-24 18:34:48.134 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 18:34:48.136 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.137 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:48.138 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 18:34:48.142 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 18:34:48.145 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:48.146 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 6.9837ms
+2026-06-24 18:34:48.148 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:48.149 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 13.0743 ms
+2026-06-24 18:34:48.151 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 17.5758ms
+2026-06-24 18:34:48.209 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - null null
+2026-06-24 18:34:48.213 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.215 +05:30 [INF] HTTP OPTIONS /api/parents/1 responded 204 in 1.5660 ms
+2026-06-24 18:34:48.217 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - 204 null null 7.2854ms
+2026-06-24 18:34:48.218 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/parents/1 - application/json null
+2026-06-24 18:34:48.221 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.223 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 18:34:48.227 +05:30 [INF] Route matched with {action = "GetParent", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParent(Int32) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-24 18:34:48.236 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 18:34:48.240 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 18:34:48.242 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.GetParent (GINJ) in 12.102ms
+2026-06-24 18:34:48.244 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 18:34:48.245 +05:30 [INF] HTTP GET /api/parents/1 responded 200 in 23.8933 ms
+2026-06-24 18:34:48.247 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/parents/1 - 200 null application/json; charset=utf-8 29.1632ms
+2026-06-24 18:34:48.266 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-24 18:34:48.269 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.269 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 0.5853 ms
+2026-06-24 18:34:48.271 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 5.4416ms
+2026-06-24 18:34:48.273 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-24 18:34:48.289 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.295 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:34:48.351 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-24 18:34:48.355 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-24 18:34:48.357 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:48.365 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 12.6685ms
+2026-06-24 18:34:48.368 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 18:34:48.370 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 80.7298 ms
+2026-06-24 18:34:48.372 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 99.4196ms
+2026-06-24 18:34:48.404 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 18:34:48.406 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.407 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.8982 ms
+2026-06-24 18:34:48.412 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 8.0358ms
+2026-06-24 18:34:48.416 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 18:34:48.419 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:48.420 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:48.421 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 18:34:48.425 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 18:34:48.429 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:48.431 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 8.3337ms
+2026-06-24 18:34:48.432 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:48.433 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 14.6711 ms
+2026-06-24 18:34:48.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 18.973ms
+2026-06-24 18:34:59.937 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 18:34:59.941 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:59.942 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 1.4273 ms
+2026-06-24 18:34:59.945 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 7.8909ms
+2026-06-24 18:34:59.947 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 18:34:59.950 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:59.951 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:59.952 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 18:34:59.955 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 18:34:59.957 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:59.961 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 7.4525ms
+2026-06-24 18:34:59.963 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:34:59.964 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 14.5265 ms
+2026-06-24 18:34:59.965 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 18.1958ms
+2026-06-24 18:34:59.972 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 18:34:59.974 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:59.975 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.1072 ms
+2026-06-24 18:34:59.977 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 5.2081ms
+2026-06-24 18:34:59.981 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 18:34:59.982 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:34:59.983 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:34:59.984 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 18:34:59.990 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 18:34:59.996 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:34:59.999 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 14.0365ms
+2026-06-24 18:35:00.001 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:35:00.002 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 19.3898 ms
+2026-06-24 18:35:00.003 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 22.4197ms
+2026-06-24 18:44:30.954 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 18:44:30.975 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:44:30.976 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.8418 ms
+2026-06-24 18:44:30.978 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 23.8907ms
+2026-06-24 18:44:30.980 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 18:44:30.982 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:44:30.982 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:44:30.984 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 18:44:31.020 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 18:44:31.026 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:44:31.028 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 41.1052ms
+2026-06-24 18:44:31.029 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 18:44:31.030 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 48.0887 ms
+2026-06-24 18:44:31.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 51.1388ms
+2026-06-24 18:47:22.720 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 18:47:22.724 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:47:22.725 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.0160 ms
+2026-06-24 18:47:22.727 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 7.0181ms
+2026-06-24 18:47:22.729 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 18:47:22.732 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:47:22.733 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:47:22.734 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 18:47:22.742 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 18:47:22.746 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:47:22.747 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 11.2323ms
+2026-06-24 18:47:22.748 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 18:47:22.749 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 17.2085 ms
+2026-06-24 18:47:22.751 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 21.9844ms
+2026-06-24 18:47:22.771 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/4 - null null
+2026-06-24 18:47:22.774 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:47:22.775 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/4 responded 204 in 0.6337 ms
+2026-06-24 18:47:22.776 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/4 - 204 null null 5.2127ms
+2026-06-24 18:47:22.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/4 - application/json null
+2026-06-24 18:47:22.780 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:47:22.782 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 18:47:22.783 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-24 18:47:22.788 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 18:47:22.793 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 18:47:22.798 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-24 18:47:22.802 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 18:47:22.804 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 19.7498ms
+2026-06-24 18:47:22.805 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 18:47:22.805 +05:30 [INF] HTTP GET /api/gifts/eligible/1/4 responded 200 in 24.8090 ms
+2026-06-24 18:47:22.807 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/4 - 200 null application/json; charset=utf-8 29.6024ms
+2026-06-24 18:49:24.584 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - null null
+2026-06-24 18:49:24.588 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:49:24.589 +05:30 [INF] HTTP OPTIONS /api/parents/1 responded 204 in 1.4069 ms
+2026-06-24 18:49:24.591 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - 204 null null 7.1217ms
+2026-06-24 18:49:24.593 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/parents/1 - application/json null
+2026-06-24 18:49:24.595 +05:30 [INF] CORS policy execution successful.
+2026-06-24 18:49:24.597 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 18:49:24.597 +05:30 [INF] Route matched with {action = "GetParent", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParent(Int32) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-24 18:49:24.605 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 18:49:24.607 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 18:49:24.609 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.GetParent (GINJ) in 9.0533ms
+2026-06-24 18:49:24.610 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 18:49:24.612 +05:30 [INF] HTTP GET /api/parents/1 responded 200 in 16.4417 ms
+2026-06-24 18:49:24.616 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/parents/1 - 200 null application/json; charset=utf-8 22.8031ms
+2026-06-24 19:04:32.265 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:04:32.293 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:32.298 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 4.9328 ms
+2026-06-24 19:04:32.306 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 40.5604ms
+2026-06-24 19:04:32.312 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:04:32.329 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:32.331 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:04:32.334 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:04:32.401 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:04:32.413 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:04:32.415 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 76.2336ms
+2026-06-24 19:04:32.417 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:04:32.424 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 95.4063 ms
+2026-06-24 19:04:32.429 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 117.1386ms
+2026-06-24 19:04:56.150 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:04:56.162 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:56.164 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.5128 ms
+2026-06-24 19:04:56.172 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 22.2089ms
+2026-06-24 19:04:56.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:04:56.192 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:56.197 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:04:56.202 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:04:56.218 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:04:56.231 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:04:56.235 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 21.4405ms
+2026-06-24 19:04:56.248 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:04:56.251 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 59.1854 ms
+2026-06-24 19:04:56.261 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 84.2535ms
+2026-06-24 19:04:56.267 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 19:04:56.283 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:56.288 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 4.6223 ms
+2026-06-24 19:04:56.294 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 26.3361ms
+2026-06-24 19:04:56.297 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 19:04:56.317 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:04:56.329 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 19:04:56.333 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 19:04:56.361 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 19:04:56.377 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:04:56.382 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 36.4918ms
+2026-06-24 19:04:56.385 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 19:04:56.395 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 77.7378 ms
+2026-06-24 19:04:56.400 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 102.7053ms
+2026-06-24 19:05:21.256 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:05:21.272 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:05:21.274 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.4027 ms
+2026-06-24 19:05:21.279 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 23.1396ms
+2026-06-24 19:05:21.283 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:05:21.309 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:05:21.312 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:05:21.316 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:05:21.324 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:05:21.331 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:05:21.336 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 14.6135ms
+2026-06-24 19:05:21.344 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:05:21.347 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 38.0164 ms
+2026-06-24 19:05:21.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 71.8147ms
+2026-06-24 19:05:59.293 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:05:59.308 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:05:59.311 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 3.3629 ms
+2026-06-24 19:05:59.319 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 26.5061ms
+2026-06-24 19:05:59.324 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:05:59.339 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:05:59.341 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:05:59.344 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:05:59.356 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:05:59.363 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:05:59.367 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 17.5449ms
+2026-06-24 19:05:59.372 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:05:59.375 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 35.7801 ms
+2026-06-24 19:05:59.380 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 56.433ms
+2026-06-24 19:10:16.581 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:10:16.637 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:10:16.650 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 13.3914 ms
+2026-06-24 19:10:16.681 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 103.4777ms
+2026-06-24 19:10:16.684 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:10:16.714 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:10:16.717 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:10:16.720 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:10:16.820 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:10:16.848 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:10:16.850 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 116.6469ms
+2026-06-24 19:10:16.852 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:10:16.863 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 148.9269 ms
+2026-06-24 19:10:16.868 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 183.5994ms
+2026-06-24 19:12:33.484 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:12:33.526 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:12:33.528 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.4895 ms
+2026-06-24 19:12:33.540 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 56.6644ms
+2026-06-24 19:12:33.577 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:12:33.614 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:12:33.623 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:12:33.627 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:12:33.643 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:12:33.659 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:12:33.664 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 26.8988ms
+2026-06-24 19:12:33.672 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:12:33.675 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 60.9009 ms
+2026-06-24 19:12:33.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 103.4041ms
+2026-06-24 19:12:52.796 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:12:52.804 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:12:52.806 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.1522 ms
+2026-06-24 19:12:52.810 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 14.5768ms
+2026-06-24 19:12:52.814 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:12:52.825 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:12:52.827 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:12:52.829 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:12:52.841 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:12:52.847 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:12:52.854 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 17.5828ms
+2026-06-24 19:12:52.858 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:12:52.860 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 35.7129 ms
+2026-06-24 19:12:52.867 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 52.8826ms
+2026-06-24 19:19:01.468 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 19:19:01.543 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:19:01.546 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 3.2675 ms
+2026-06-24 19:19:01.551 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 88.4975ms
+2026-06-24 19:19:01.560 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 19:19:01.575 +05:30 [INF] CORS policy execution successful.
+2026-06-24 19:19:01.578 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:19:01.580 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 19:19:01.655 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 19:19:01.664 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 19:19:01.672 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 81.4826ms
+2026-06-24 19:19:01.698 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 19:19:01.706 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 130.4532 ms
+2026-06-24 19:19:01.713 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 152.9046ms
+2026-06-24 21:47:19.775 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-24 21:47:19.805 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:19.808 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.6851 ms
+2026-06-24 21:47:19.814 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 39.3744ms
+2026-06-24 21:47:19.819 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-24 21:47:19.831 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:19.835 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 21:47:19.839 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-24 21:47:19.910 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-24 21:47:20.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-24 21:47:20.242 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 397.0023ms
+2026-06-24 21:47:20.247 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 21:47:20.251 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 419.6280 ms
+2026-06-24 21:47:20.258 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 438.4984ms
+2026-06-24 21:47:20.300 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-24 21:47:20.308 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:20.311 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 2.5277 ms
+2026-06-24 21:47:20.318 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 18.0064ms
+2026-06-24 21:47:20.326 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-24 21:47:20.343 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:20.348 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 21:47:20.355 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-24 21:47:20.367 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-24 21:47:20.374 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:47:20.378 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 17.931ms
+2026-06-24 21:47:20.381 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 21:47:20.384 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 40.9096 ms
+2026-06-24 21:47:20.390 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 63.2182ms
+2026-06-24 21:47:27.646 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 21:47:27.653 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:27.656 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 2.3047 ms
+2026-06-24 21:47:27.658 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 12.0099ms
+2026-06-24 21:47:27.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 21:47:27.669 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:27.670 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 21:47:27.671 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 21:47:27.676 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 21:47:27.678 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:47:27.681 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 8.3678ms
+2026-06-24 21:47:27.684 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 21:47:27.686 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 17.5110 ms
+2026-06-24 21:47:27.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 29.9673ms
+2026-06-24 21:47:27.734 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 21:47:27.738 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:27.740 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.6851 ms
+2026-06-24 21:47:27.744 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 10.2003ms
+2026-06-24 21:47:27.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 21:47:27.756 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:47:27.758 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:47:27.760 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 21:47:27.774 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 21:47:27.783 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:47:27.786 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 22.8054ms
+2026-06-24 21:47:27.787 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:47:27.789 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 32.9666 ms
+2026-06-24 21:47:27.794 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 46.2457ms
+2026-06-24 21:48:03.805 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 21:48:03.814 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:03.815 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.1664 ms
+2026-06-24 21:48:03.818 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 13.4382ms
+2026-06-24 21:48:03.821 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 21:48:03.834 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:03.837 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:48:03.840 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 21:48:03.848 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 21:48:03.859 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:48:03.863 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 19.3315ms
+2026-06-24 21:48:03.865 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:48:03.867 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 32.9209 ms
+2026-06-24 21:48:03.871 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 49.9264ms
+2026-06-24 21:48:03.910 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - null null
+2026-06-24 21:48:03.917 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:03.919 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/2 responded 204 in 1.7653 ms
+2026-06-24 21:48:03.922 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - 204 null null 11.8047ms
+2026-06-24 21:48:03.926 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - application/json null
+2026-06-24 21:48:03.929 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:03.931 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 21:48:03.933 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-24 21:48:03.942 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:03.960 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:03.986 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-24 21:48:03.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:48:03.995 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 59.187ms
+2026-06-24 21:48:03.998 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 21:48:04.002 +05:30 [INF] HTTP GET /api/gifts/eligible/1/2 responded 200 in 72.0646 ms
+2026-06-24 21:48:04.007 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - 200 null application/json; charset=utf-8 81.4996ms
+2026-06-24 21:48:08.774 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - null null
+2026-06-24 21:48:08.784 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:08.786 +05:30 [INF] HTTP OPTIONS /api/parents/1 responded 204 in 2.2973 ms
+2026-06-24 21:48:08.792 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/1 - 204 null null 17.8943ms
+2026-06-24 21:48:08.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/parents/1 - application/json null
+2026-06-24 21:48:08.804 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:08.807 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 21:48:08.809 +05:30 [INF] Route matched with {action = "GetParent", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParent(Int32) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-24 21:48:08.815 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:08.819 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType16`9[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 21:48:08.824 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.GetParent (GINJ) in 12.9152ms
+2026-06-24 21:48:08.831 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.GetParent (GINJ)'
+2026-06-24 21:48:08.838 +05:30 [INF] HTTP GET /api/parents/1 responded 200 in 33.7921 ms
+2026-06-24 21:48:08.847 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/parents/1 - 200 null application/json; charset=utf-8 50.7686ms
+2026-06-24 21:48:10.424 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - null null
+2026-06-24 21:48:10.428 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.430 +05:30 [INF] HTTP OPTIONS /api/parents/address/1 responded 204 in 1.3670 ms
+2026-06-24 21:48:10.431 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/parents/address/1 - 204 null null 7.6592ms
+2026-06-24 21:48:10.435 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/parents/address/1 - application/json 126
+2026-06-24 21:48:10.473 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.478 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-24 21:48:10.480 +05:30 [INF] Route matched with {action = "UpdateAddress", controller = "Parents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAddress(Int32, GINJ.DTOs.AddressRequest) on controller GINJ.Controllers.ParentsController (GINJ).
+2026-06-24 21:48:10.492 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:10.519 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Parents` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+2026-06-24 21:48:10.534 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-24 21:48:10.548 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`8[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 21:48:10.554 +05:30 [INF] Executed action GINJ.Controllers.ParentsController.UpdateAddress (GINJ) in 69.3825ms
+2026-06-24 21:48:10.557 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ParentsController.UpdateAddress (GINJ)'
+2026-06-24 21:48:10.562 +05:30 [INF] HTTP PUT /api/parents/address/1 responded 200 in 88.5846 ms
+2026-06-24 21:48:10.565 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/parents/address/1 - 200 null application/json; charset=utf-8 130.9437ms
+2026-06-24 21:48:10.580 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - null null
+2026-06-24 21:48:10.584 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.586 +05:30 [INF] HTTP OPTIONS /api/submissions/create/1 responded 204 in 2.0149 ms
+2026-06-24 21:48:10.590 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/create/1 - 204 null null 10.0428ms
+2026-06-24 21:48:10.593 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/submissions/create/1 - application/json 186
+2026-06-24 21:48:10.601 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.603 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-24 21:48:10.607 +05:30 [INF] Route matched with {action = "Create", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Int32, GINJ.DTOs.SubmissionRequest) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 21:48:10.616 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:10.627 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:10.635 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:10.645 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:48:10.652 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 1)
+2026-06-24 21:48:10.666 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32), @__rhymeId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Submissions` AS `s`
+    LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+    WHERE ((`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`RhymeId` = @__rhymeId_1)) AND (`d`.`Id` IS NOT NULL AND (`d`.`DeliveryStatus` = 2)))
+2026-06-24 21:48:10.678 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32), @__rhymeId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`
+FROM `Submissions` AS `s`
+WHERE ((`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`RhymeId` = @__rhymeId_1)) AND (`s`.`Status` = 2)
+ORDER BY `s`.`RejectedAt` DESC
+LIMIT 1
+2026-06-24 21:48:10.685 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE (`s`.`ChildProfileId` = @__childProfileId_0) AND (`s`.`Status` = 0)
+ORDER BY `s`.`CreatedAt` DESC
+LIMIT 1
+2026-06-24 21:48:10.733 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE `Dispatches` SET `UpdatedAt` = @p0
+WHERE `Id` = @p1;
+SELECT ROW_COUNT();
+
+UPDATE `Submissions` SET `GiftId` = @p2, `RhymeId` = @p3, `UpdatedAt` = @p4, `WhatsAppTestDate` = @p5
+WHERE `Id` = @p6;
+SELECT ROW_COUNT();
+2026-06-24 21:48:10.764 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime), @p6='?' (Size = 4000), @p7='?' (Size = 255), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime), @p17='?' (Size = 4000), @p18='?' (Size = 255), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `AuditLogs` (`Action`, `ActorId`, `ActorName`, `ActorType`, `ChangedColumns`, `CreatedAt`, `EntityId`, `EntityName`, `NewValues`, `OldValues`, `RequestPath`)
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+SELECT `Id`
+FROM `AuditLogs`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-24 21:48:10.778 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.Models.Submission'.
+2026-06-24 21:48:10.782 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.Create (GINJ) in 171.621ms
+2026-06-24 21:48:10.786 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.Create (GINJ)'
+2026-06-24 21:48:10.794 +05:30 [INF] HTTP POST /api/submissions/create/1 responded 200 in 193.4197 ms
+2026-06-24 21:48:10.798 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/submissions/create/1 - 200 null application/json; charset=utf-8 205.6088ms
+2026-06-24 21:48:10.892 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 21:48:10.898 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.900 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.9469 ms
+2026-06-24 21:48:10.906 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 14.4243ms
+2026-06-24 21:48:10.909 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 21:48:10.919 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:48:10.922 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:48:10.924 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 21:48:10.933 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 21:48:10.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:48:10.946 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 17.9344ms
+2026-06-24 21:48:10.948 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:48:10.951 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 31.8808 ms
+2026-06-24 21:48:10.958 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 48.5562ms
+2026-06-24 21:50:43.027 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 21:50:43.056 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:50:43.058 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 2.0173 ms
+2026-06-24 21:50:43.063 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 35.7745ms
+2026-06-24 21:50:43.068 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 21:50:43.072 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:50:43.077 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:50:43.079 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 21:50:43.091 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 21:50:43.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:50:43.101 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 18.886ms
+2026-06-24 21:50:43.104 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 21:50:43.106 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 34.3540 ms
+2026-06-24 21:50:43.110 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 42.0473ms
+2026-06-24 21:50:43.130 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - null null
+2026-06-24 21:50:43.138 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:50:43.140 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/2 responded 204 in 1.6762 ms
+2026-06-24 21:50:43.144 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - 204 null null 13.4588ms
+2026-06-24 21:50:43.147 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - application/json null
+2026-06-24 21:50:43.159 +05:30 [INF] CORS policy execution successful.
+2026-06-24 21:50:43.164 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 21:50:43.166 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-24 21:50:43.174 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:50:43.181 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 21:50:43.190 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-24 21:50:43.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 21:50:43.199 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 29.3222ms
+2026-06-24 21:50:43.203 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 21:50:43.206 +05:30 [INF] HTTP GET /api/gifts/eligible/1/2 responded 200 in 47.2581 ms
+2026-06-24 21:50:43.210 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - 200 null application/json; charset=utf-8 63.1012ms
+2026-06-24 22:00:32.882 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 22:00:32.897 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:00:32.899 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 1.4058 ms
+2026-06-24 22:00:32.902 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 19.7545ms
+2026-06-24 22:00:32.904 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 22:00:32.915 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:00:32.917 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:00:32.920 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 22:00:33.005 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 22:00:33.016 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 22:00:33.018 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 93.2684ms
+2026-06-24 22:00:33.020 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:00:33.022 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 107.4272 ms
+2026-06-24 22:00:33.030 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 126.2507ms
+2026-06-24 22:00:46.955 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 22:00:46.962 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:00:46.963 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 1.0445 ms
+2026-06-24 22:00:46.966 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 11.2801ms
+2026-06-24 22:00:46.968 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 22:00:46.979 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:00:46.981 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:00:46.983 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 22:00:46.989 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 22:00:46.995 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 22:00:46.997 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 11.0161ms
+2026-06-24 22:00:47.000 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:00:47.002 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 23.4866 ms
+2026-06-24 22:00:47.006 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 38.0906ms
+2026-06-24 22:08:35.807 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 22:08:35.840 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:08:35.841 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.9544 ms
+2026-06-24 22:08:35.843 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 35.7423ms
+2026-06-24 22:08:35.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 22:08:35.860 +05:30 [INF] CORS policy execution successful.
+2026-06-24 22:08:35.861 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:08:35.863 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 22:08:35.899 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 22:08:35.902 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 22:08:35.903 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 31.377ms
+2026-06-24 22:08:35.905 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 22:08:35.906 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 45.9212 ms
+2026-06-24 22:08:35.908 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 62.5538ms
+2026-06-24 23:12:52.653 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-06-24 23:12:52.689 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:52.691 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.4318 ms
+2026-06-24 23:12:52.693 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 43.3796ms
+2026-06-24 23:12:52.699 +05:30 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 43
+2026-06-24 23:12:52.706 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:52.708 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 23:12:52.712 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GINJ.DTOs.LoginRequest) on controller GINJ.Controllers.AuthController (GINJ).
+2026-06-24 23:12:52.784 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Phone_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`City`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`HouseOrFlatNo`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`PinCode`, `p`.`RecipientName`, `p`.`SavedAddress`, `p`.`StreetOrLocality`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+WHERE `p`.`Phone` = @__request_Phone_0
+LIMIT 1
+2026-06-24 23:12:52.886 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.DTOs.LoginResponse'.
+2026-06-24 23:12:52.890 +05:30 [INF] Executed action GINJ.Controllers.AuthController.Login (GINJ) in 172.6199ms
+2026-06-24 23:12:52.891 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AuthController.Login (GINJ)'
+2026-06-24 23:12:52.892 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 187.0391 ms
+2026-06-24 23:12:52.897 +05:30 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 199.1007ms
+2026-06-24 23:12:52.918 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - null null
+2026-06-24 23:12:52.921 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:52.922 +05:30 [INF] HTTP OPTIONS /api/childprofiles/by-parent/1 responded 204 in 1.7941 ms
+2026-06-24 23:12:52.924 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/childprofiles/by-parent/1 - 204 null null 6.6967ms
+2026-06-24 23:12:52.926 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - application/json null
+2026-06-24 23:12:52.935 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:52.940 +05:30 [INF] Executing endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 23:12:52.942 +05:30 [INF] Route matched with {action = "GetByParent", controller = "ChildProfiles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByParent(Int32) on controller GINJ.Controllers.ChildProfilesController (GINJ).
+2026-06-24 23:12:52.952 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__parentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`ParentId` = @__parentId_0
+2026-06-24 23:12:52.957 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.ChildProfile, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:12:52.958 +05:30 [INF] Executed action GINJ.Controllers.ChildProfilesController.GetByParent (GINJ) in 12.8172ms
+2026-06-24 23:12:52.965 +05:30 [INF] Executed endpoint 'GINJ.Controllers.ChildProfilesController.GetByParent (GINJ)'
+2026-06-24 23:12:52.967 +05:30 [INF] HTTP GET /api/childprofiles/by-parent/1 responded 200 in 32.0023 ms
+2026-06-24 23:12:52.970 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/childprofiles/by-parent/1 - 200 null application/json; charset=utf-8 43.3057ms
+2026-06-24 23:12:58.168 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 23:12:58.171 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:58.172 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.8922 ms
+2026-06-24 23:12:58.174 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 5.5952ms
+2026-06-24 23:12:58.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 23:12:58.185 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:58.186 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:12:58.187 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 23:12:58.190 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 23:12:58.192 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:12:58.193 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 5.3225ms
+2026-06-24 23:12:58.196 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:12:58.197 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 11.9563 ms
+2026-06-24 23:12:58.199 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 22.6804ms
+2026-06-24 23:12:58.309 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 23:12:58.404 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:58.405 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.0103 ms
+2026-06-24 23:12:58.408 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 99.0685ms
+2026-06-24 23:12:58.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 23:12:58.419 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:12:58.421 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:12:58.422 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 23:12:58.438 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 23:12:58.474 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:12:58.477 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 53.8546ms
+2026-06-24 23:12:58.483 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:12:58.485 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 65.6857 ms
+2026-06-24 23:12:58.489 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 75.2595ms
+2026-06-24 23:13:40.339 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 23:13:40.355 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:40.355 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 0.7521 ms
+2026-06-24 23:13:40.357 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 18.5732ms
+2026-06-24 23:13:40.360 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 23:13:40.365 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:40.366 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:40.367 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 23:13:40.371 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 23:13:40.373 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:40.375 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 6.6419ms
+2026-06-24 23:13:40.379 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:40.382 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 17.1797 ms
+2026-06-24 23:13:40.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 24.7938ms
+2026-06-24 23:13:40.443 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - null null
+2026-06-24 23:13:40.448 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:40.449 +05:30 [INF] HTTP OPTIONS /api/gifts/eligible/1/2 responded 204 in 1.7748 ms
+2026-06-24 23:13:40.452 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/gifts/eligible/1/2 - 204 null null 9.3559ms
+2026-06-24 23:13:40.453 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - application/json null
+2026-06-24 23:13:40.457 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:40.458 +05:30 [INF] Executing endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 23:13:40.459 +05:30 [INF] Route matched with {action = "GetEligible", controller = "Gifts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEligible(Int32, Int32) on controller GINJ.Controllers.GiftsController (GINJ).
+2026-06-24 23:13:40.467 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 23:13:40.470 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`
+FROM `ChildProfiles` AS `c`
+WHERE `c`.`Id` = @__p_0
+LIMIT 1
+2026-06-24 23:13:40.473 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__child_InternalScore_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE (`g`.`IsActive` AND (`g`.`AvailableStock` > 0)) AND (@__child_InternalScore_0 >= `g`.`MinimumScore`)
+2026-06-24 23:13:40.481 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:40.483 +05:30 [INF] Executed action GINJ.Controllers.GiftsController.GetEligible (GINJ) in 20.9752ms
+2026-06-24 23:13:40.485 +05:30 [INF] Executed endpoint 'GINJ.Controllers.GiftsController.GetEligible (GINJ)'
+2026-06-24 23:13:40.486 +05:30 [INF] HTTP GET /api/gifts/eligible/1/2 responded 200 in 29.0473 ms
+2026-06-24 23:13:40.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/gifts/eligible/1/2 - 200 null application/json; charset=utf-8 34.5117ms
+2026-06-24 23:13:51.541 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 23:13:51.554 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:51.554 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 0.8847 ms
+2026-06-24 23:13:51.556 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 15.1538ms
+2026-06-24 23:13:51.558 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 23:13:51.567 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:51.568 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:13:51.569 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 23:13:51.573 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 23:13:51.575 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:51.589 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 18.9665ms
+2026-06-24 23:13:51.591 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:13:51.591 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 24.7885 ms
+2026-06-24 23:13:51.599 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 40.4263ms
+2026-06-24 23:13:51.652 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 23:13:51.655 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:51.656 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.1174 ms
+2026-06-24 23:13:51.658 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 5.2182ms
+2026-06-24 23:13:51.663 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 23:13:51.669 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:51.670 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:51.670 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 23:13:51.674 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 23:13:51.679 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:51.683 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 11.3272ms
+2026-06-24 23:13:51.684 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:51.685 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 16.4661 ms
+2026-06-24 23:13:51.687 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 24.1836ms
+2026-06-24 23:13:57.124 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rhymes - null null
+2026-06-24 23:13:57.131 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:57.135 +05:30 [INF] HTTP OPTIONS /api/rhymes responded 204 in 3.1175 ms
+2026-06-24 23:13:57.137 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rhymes - 204 null null 13.0042ms
+2026-06-24 23:13:57.139 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rhymes - application/json null
+2026-06-24 23:13:57.142 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:57.146 +05:30 [INF] Executing endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:13:57.147 +05:30 [INF] Route matched with {action = "GetAll", controller = "Rhymes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller GINJ.Controllers.RhymesController (GINJ).
+2026-06-24 23:13:57.152 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`IsActive`
+2026-06-24 23:13:57.154 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:57.155 +05:30 [INF] Executed action GINJ.Controllers.RhymesController.GetAll (GINJ) in 4.7379ms
+2026-06-24 23:13:57.157 +05:30 [INF] Executed endpoint 'GINJ.Controllers.RhymesController.GetAll (GINJ)'
+2026-06-24 23:13:57.159 +05:30 [INF] HTTP GET /api/rhymes responded 200 in 16.3581 ms
+2026-06-24 23:13:57.163 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rhymes - 200 null application/json; charset=utf-8 24.8304ms
+2026-06-24 23:13:57.194 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - null null
+2026-06-24 23:13:57.198 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:57.199 +05:30 [INF] HTTP OPTIONS /api/submissions/by-child/1 responded 204 in 1.4321 ms
+2026-06-24 23:13:57.201 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/submissions/by-child/1 - 204 null null 7.1647ms
+2026-06-24 23:13:57.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - application/json null
+2026-06-24 23:13:57.206 +05:30 [INF] CORS policy execution successful.
+2026-06-24 23:13:57.206 +05:30 [INF] Executing endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:57.207 +05:30 [INF] Route matched with {action = "GetByChild", controller = "Submissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByChild(Int32) on controller GINJ.Controllers.SubmissionsController (GINJ).
+2026-06-24 23:13:57.215 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__childProfileId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppNumber`, `s`.`WhatsAppTestDate`, `s`.`WhatsAppTestStatus`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`ChildProfileId` = @__childProfileId_0
+ORDER BY `s`.`CreatedAt` DESC
+2026-06-24 23:13:57.217 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType17`12[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-24 23:13:57.218 +05:30 [INF] Executed action GINJ.Controllers.SubmissionsController.GetByChild (GINJ) in 10.1302ms
+2026-06-24 23:13:57.219 +05:30 [INF] Executed endpoint 'GINJ.Controllers.SubmissionsController.GetByChild (GINJ)'
+2026-06-24 23:13:57.220 +05:30 [INF] HTTP GET /api/submissions/by-child/1 responded 200 in 13.9485 ms
+2026-06-24 23:13:57.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/api/submissions/by-child/1 - 200 null application/json; charset=utf-8 17.8772ms

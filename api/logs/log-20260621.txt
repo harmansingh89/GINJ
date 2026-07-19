@@ -1,0 +1,1416 @@
+2026-06-21 19:30:49.215 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-06-21 19:30:49.883 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rhymes` AS `r`)
+2026-06-21 19:30:49.898 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`)
+2026-06-21 19:30:49.948 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Drawing Pad')
+2026-06-21 19:30:49.955 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Toy Ball')
+2026-06-21 19:30:49.963 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Story Book')
+2026-06-21 19:30:50.263 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-21 19:30:50.671 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-06-21 19:30:50.672 +05:30 [INF] Now listening on: https://0.0.0.0:5001
+2026-06-21 19:30:50.775 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-21 19:30:50.777 +05:30 [INF] Hosting environment: Development
+2026-06-21 19:30:50.779 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-06-21 19:30:51.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2026-06-21 19:30:53.933 +05:30 [INF] HTTP GET / responded 404 in 2093.6425 ms
+2026-06-21 19:30:53.949 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 404 0 null 2363.7709ms
+2026-06-21 19:30:53.960 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5001/, Response status code: 404
+2026-06-21 19:30:57.400 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:30:57.419 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:30:57.464 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:30:57.511 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:30:57.858 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:30:58.109 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:30:58.207 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:30:58.209 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 688.3745ms
+2026-06-21 19:30:58.213 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:30:58.217 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 804.1352 ms
+2026-06-21 19:30:58.219 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:30:58.226 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:30:58.228 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:30:58.231 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 831.0217ms
+2026-06-21 19:30:58.318 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:30:58.329 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:30:58.331 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 100.8229ms
+2026-06-21 19:30:58.333 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:30:58.334 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 115.6087 ms
+2026-06-21 19:30:58.336 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 128.8104ms
+2026-06-21 19:31:02.644 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2026-06-21 19:31:02.777 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 133.6434ms
+2026-06-21 19:31:02.848 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-21 19:31:02.848 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2026-06-21 19:31:02.875 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16493 application/javascript; charset=utf-8 27.1432ms
+2026-06-21 19:31:02.896 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.2329ms
+2026-06-21 19:31:02.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2026-06-21 19:31:03.015 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.2346ms
+2026-06-21 19:31:19.650 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:31:19.654 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:31:19.655 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:31:19.657 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:31:19.670 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:31:19.677 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:31:19.680 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 19.5276ms
+2026-06-21 19:31:19.681 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:31:19.681 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:31:19.683 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:31:19.683 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 28.7766 ms
+2026-06-21 19:31:19.684 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:31:19.685 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 34.4519ms
+2026-06-21 19:31:19.685 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:31:19.696 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:31:19.699 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:31:19.701 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 12.4019ms
+2026-06-21 19:31:19.702 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:31:19.703 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 20.0725 ms
+2026-06-21 19:31:19.704 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 23.7551ms
+2026-06-21 19:31:36.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:31:36.451 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:31:36.452 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:31:36.457 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:31:36.472 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:31:36.476 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:31:36.478 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 18.5287ms
+2026-06-21 19:31:36.479 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:31:36.479 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:31:36.480 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 29.3021 ms
+2026-06-21 19:31:36.483 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 36.764ms
+2026-06-21 19:31:36.484 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:31:36.487 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:31:36.488 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:31:36.493 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:31:36.496 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:31:36.497 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 7.569ms
+2026-06-21 19:31:36.498 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:31:36.499 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 15.3888 ms
+2026-06-21 19:31:36.501 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 21.2914ms
+2026-06-21 19:32:23.786 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/1 - null null
+2026-06-21 19:32:23.790 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:23.792 +05:30 [INF] HTTP OPTIONS /api/admin-lists/rhymes/1 responded 204 in 2.1513 ms
+2026-06-21 19:32:23.793 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/1 - 204 null null 7.5769ms
+2026-06-21 19:32:23.798 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/1 - application/json 100
+2026-06-21 19:32:23.800 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:23.801 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:32:23.813 +05:30 [INF] Route matched with {action = "UpdateRhyme", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateRhyme(Int32, GINJ.DTOs.RhymeRequest) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:32:23.987 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-21 19:32:24.084 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Rhymes` SET `AgeGroup` = @p0, `IsThisGurbani` = @p1, `Title` = @p2, `YoutubeUrl` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-06-21 19:32:24.100 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.Models.Rhyme'.
+2026-06-21 19:32:24.101 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ) in 284.5689ms
+2026-06-21 19:32:24.102 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:32:24.103 +05:30 [INF] HTTP PUT /api/admin-lists/rhymes/1 responded 200 in 302.9655 ms
+2026-06-21 19:32:24.105 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/1 - 200 null application/json; charset=utf-8 307.4249ms
+2026-06-21 19:32:24.109 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:32:24.111 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:24.112 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:32:24.113 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:32:24.116 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:32:24.117 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:32:24.119 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 4.586ms
+2026-06-21 19:32:24.120 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:32:24.120 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 9.1041 ms
+2026-06-21 19:32:24.121 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 12.8565ms
+2026-06-21 19:32:57.633 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/2 - null null
+2026-06-21 19:32:57.637 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:57.638 +05:30 [INF] HTTP OPTIONS /api/admin-lists/rhymes/2 responded 204 in 0.8736 ms
+2026-06-21 19:32:57.641 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/2 - 204 null null 7.1095ms
+2026-06-21 19:32:57.644 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/2 - application/json 96
+2026-06-21 19:32:57.646 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:57.647 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:32:57.648 +05:30 [INF] Route matched with {action = "UpdateRhyme", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateRhyme(Int32, GINJ.DTOs.RhymeRequest) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:32:57.653 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-21 19:32:57.663 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Rhymes` SET `AgeGroup` = @p0, `IsThisGurbani` = @p1, `Title` = @p2, `YoutubeUrl` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-06-21 19:32:57.664 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.Models.Rhyme'.
+2026-06-21 19:32:57.665 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ) in 15.4682ms
+2026-06-21 19:32:57.666 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:32:57.667 +05:30 [INF] HTTP PUT /api/admin-lists/rhymes/2 responded 200 in 20.4040 ms
+2026-06-21 19:32:57.668 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/2 - 200 null application/json; charset=utf-8 23.8752ms
+2026-06-21 19:32:57.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:32:57.673 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:32:57.674 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:32:57.675 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:32:57.679 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:32:57.681 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:32:57.682 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 6.0412ms
+2026-06-21 19:32:57.683 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:32:57.684 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 10.9573 ms
+2026-06-21 19:32:57.685 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 14.226ms
+2026-06-21 19:33:20.201 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/3 - null null
+2026-06-21 19:33:20.204 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:33:20.205 +05:30 [INF] HTTP OPTIONS /api/admin-lists/rhymes/3 responded 204 in 1.4943 ms
+2026-06-21 19:33:20.207 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/rhymes/3 - 204 null null 6.1244ms
+2026-06-21 19:33:20.212 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/3 - application/json 94
+2026-06-21 19:33:20.214 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:33:20.215 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:33:20.215 +05:30 [INF] Route matched with {action = "UpdateRhyme", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateRhyme(Int32, GINJ.DTOs.RhymeRequest) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:33:20.219 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+WHERE `r`.`Id` = @__p_0
+LIMIT 1
+2026-06-21 19:33:20.226 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Rhymes` SET `AgeGroup` = @p0, `IsThisGurbani` = @p1, `Title` = @p2, `YoutubeUrl` = @p3
+WHERE `Id` = @p4;
+SELECT ROW_COUNT();
+2026-06-21 19:33:20.228 +05:30 [INF] Executing OkObjectResult, writing value of type 'GINJ.Models.Rhyme'.
+2026-06-21 19:33:20.229 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ) in 12.7332ms
+2026-06-21 19:33:20.230 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.UpdateRhyme (GINJ)'
+2026-06-21 19:33:20.231 +05:30 [INF] HTTP PUT /api/admin-lists/rhymes/3 responded 200 in 17.2561 ms
+2026-06-21 19:33:20.233 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/admin-lists/rhymes/3 - 200 null application/json; charset=utf-8 20.495ms
+2026-06-21 19:33:20.235 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:33:20.237 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:33:20.237 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:33:20.238 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:33:20.242 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:33:20.245 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:33:20.246 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 6.1047ms
+2026-06-21 19:33:20.247 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:33:20.248 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 10.9086 ms
+2026-06-21 19:33:20.249 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 13.8006ms
+2026-06-21 19:40:19.419 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:40:19.426 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:19.428 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:19.432 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:40:19.496 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:40:19.505 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:19.509 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 73.3863ms
+2026-06-21 19:40:19.511 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:19.512 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 86.0109 ms
+2026-06-21 19:40:19.515 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 100.1628ms
+2026-06-21 19:40:19.519 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:40:19.521 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:19.522 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:19.523 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:40:19.528 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:40:19.532 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:19.534 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 9.4122ms
+2026-06-21 19:40:19.535 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:19.536 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 15.6266 ms
+2026-06-21 19:40:19.538 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 19.5503ms
+2026-06-21 19:40:21.580 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:40:21.584 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:21.585 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:40:21.587 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:21.591 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:40:21.594 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:21.596 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 6.4784ms
+2026-06-21 19:40:21.597 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 19:40:21.597 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:40:21.600 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:21.600 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 16.7247 ms
+2026-06-21 19:40:21.601 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:40:21.604 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 24.2609ms
+2026-06-21 19:40:21.605 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:21.612 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 19:40:21.616 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:21.617 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 7.6379ms
+2026-06-21 19:40:21.619 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 19:40:21.620 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 19.5992 ms
+2026-06-21 19:40:21.622 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 25.1126ms
+2026-06-21 19:40:27.700 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:27.704 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:27.705 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:27.712 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:27.726 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:27.729 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:27.734 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 19.7514ms
+2026-06-21 19:40:27.735 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:27.735 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:27.739 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:27.740 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 36.2401 ms
+2026-06-21 19:40:27.741 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:27.743 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 43.6307ms
+2026-06-21 19:40:27.744 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:27.750 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:27.753 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:27.755 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.7999ms
+2026-06-21 19:40:27.757 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:27.758 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 18.3606 ms
+2026-06-21 19:40:27.759 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 23.8205ms
+2026-06-21 19:40:44.993 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts/1 - null null
+2026-06-21 19:40:44.997 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:44.999 +05:30 [INF] HTTP OPTIONS /api/admin-lists/gifts/1 responded 204 in 1.8603 ms
+2026-06-21 19:40:45.001 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts/1 - 204 null null 8.1903ms
+2026-06-21 19:40:45.004 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5000/api/admin-lists/gifts/1 - null null
+2026-06-21 19:40:45.005 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:45.006 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.DeleteGift (GINJ)'
+2026-06-21 19:40:45.009 +05:30 [INF] Route matched with {action = "DeleteGift", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteGift(Int32) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:45.022 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-21 19:40:45.077 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Gifts`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2026-06-21 19:40:45.091 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-06-21 19:40:45.094 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.DeleteGift (GINJ) in 82.6226ms
+2026-06-21 19:40:45.096 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.DeleteGift (GINJ)'
+2026-06-21 19:40:45.097 +05:30 [INF] HTTP DELETE /api/admin-lists/gifts/1 responded 204 in 91.7248 ms
+2026-06-21 19:40:45.101 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5000/api/admin-lists/gifts/1 - 204 null null 97.0557ms
+2026-06-21 19:40:45.105 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:45.107 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:45.108 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:45.109 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:45.112 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:45.115 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:45.117 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.0528ms
+2026-06-21 19:40:45.118 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:45.119 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 11.8229 ms
+2026-06-21 19:40:45.120 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 15.3213ms
+2026-06-21 19:40:47.944 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts/2 - null null
+2026-06-21 19:40:47.949 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:47.949 +05:30 [INF] HTTP OPTIONS /api/admin-lists/gifts/2 responded 204 in 0.8726 ms
+2026-06-21 19:40:47.952 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts/2 - 204 null null 7.4335ms
+2026-06-21 19:40:47.955 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5000/api/admin-lists/gifts/2 - null null
+2026-06-21 19:40:47.957 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:47.958 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.DeleteGift (GINJ)'
+2026-06-21 19:40:47.959 +05:30 [INF] Route matched with {action = "DeleteGift", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteGift(Int32) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:47.963 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+WHERE `g`.`Id` = @__p_0
+LIMIT 1
+2026-06-21 19:40:47.971 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Gifts`
+WHERE `Id` = @p0;
+SELECT ROW_COUNT();
+2026-06-21 19:40:47.973 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-06-21 19:40:47.974 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.DeleteGift (GINJ) in 13.6236ms
+2026-06-21 19:40:47.975 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.DeleteGift (GINJ)'
+2026-06-21 19:40:47.976 +05:30 [INF] HTTP DELETE /api/admin-lists/gifts/2 responded 204 in 18.1563 ms
+2026-06-21 19:40:47.977 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5000/api/admin-lists/gifts/2 - 204 null null 22.1224ms
+2026-06-21 19:40:47.981 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:47.983 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:47.984 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:47.986 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:47.990 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:47.992 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:47.993 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 5.0954ms
+2026-06-21 19:40:47.994 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:47.995 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 11.8303 ms
+2026-06-21 19:40:47.996 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 15.4124ms
+2026-06-21 19:40:50.808 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:40:50.816 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:50.818 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:50.820 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:40:50.826 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:40:50.832 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:50.838 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 15.4631ms
+2026-06-21 19:40:50.840 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:40:50.840 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:50.842 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:50.843 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 26.6641 ms
+2026-06-21 19:40:50.843 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:50.844 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 35.9759ms
+2026-06-21 19:40:50.845 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:40:50.853 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:40:50.855 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:50.858 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.283ms
+2026-06-21 19:40:50.861 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:40:50.863 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 20.3140 ms
+2026-06-21 19:40:50.869 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 29.5985ms
+2026-06-21 19:40:57.250 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:57.254 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:57.255 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:57.257 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:57.260 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:57.263 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:57.264 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 5.1898ms
+2026-06-21 19:40:57.265 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:40:57.266 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:57.268 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:40:57.268 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.9749 ms
+2026-06-21 19:40:57.269 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:57.270 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 19.6491ms
+2026-06-21 19:40:57.271 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:40:57.275 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:40:57.279 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:40:57.280 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.2544ms
+2026-06-21 19:40:57.282 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:40:57.283 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.5482 ms
+2026-06-21 19:40:57.284 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 19.026ms
+2026-06-21 19:41:00.060 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:00.066 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:00.067 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:00.068 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:00.074 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:00.077 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:00.078 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.9254ms
+2026-06-21 19:41:00.080 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:00.080 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:00.084 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:00.084 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 18.5140 ms
+2026-06-21 19:41:00.085 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:00.087 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 26.4159ms
+2026-06-21 19:41:00.088 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:00.094 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:00.096 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:00.097 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 5.3014ms
+2026-06-21 19:41:00.098 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:00.099 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 15.9058 ms
+2026-06-21 19:41:00.101 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 21.4539ms
+2026-06-21 19:41:02.853 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:02.854 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:02.860 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:02.871 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:02.872 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:02.872 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:02.873 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:02.874 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:02.878 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:02.887 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:02.888 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 13.2206ms
+2026-06-21 19:41:02.889 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:02.890 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 30.2743 ms
+2026-06-21 19:41:02.892 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 38.5655ms
+2026-06-21 19:41:02.897 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:02.902 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:02.903 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 26.9991ms
+2026-06-21 19:41:02.904 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:02.905 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 33.7231 ms
+2026-06-21 19:41:02.906 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 52.3622ms
+2026-06-21 19:41:05.073 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:05.076 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:05.078 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:05.080 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:05.084 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:05.086 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:05.088 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.7084ms
+2026-06-21 19:41:05.089 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:05.089 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:05.091 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:05.092 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 15.8451 ms
+2026-06-21 19:41:05.093 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:05.094 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 21.1745ms
+2026-06-21 19:41:05.095 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:05.101 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:05.104 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:05.107 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 7.8958ms
+2026-06-21 19:41:05.108 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:05.109 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 17.5208 ms
+2026-06-21 19:41:05.110 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 21.2423ms
+2026-06-21 19:41:24.930 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:24.934 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:24.935 +05:30 [INF] HTTP OPTIONS /api/admin-lists/gifts responded 204 in 1.2412 ms
+2026-06-21 19:41:24.937 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/gifts - 204 null null 7.0736ms
+2026-06-21 19:41:24.939 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/admin-lists/gifts - application/json 46
+2026-06-21 19:41:24.941 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:24.942 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.CreateGift (GINJ)'
+2026-06-21 19:41:24.945 +05:30 [INF] Route matched with {action = "CreateGift", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateGift(GINJ.DTOs.GiftRequest) on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:25.028 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `Gifts` (`AvailableStock`, `Description`, `EligibilityCriteria`, `ImageUrl`, `IsActive`, `MinimumScore`, `Name`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT `Id`
+FROM `Gifts`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2026-06-21 19:41:25.076 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'GINJ.Models.Gift'.
+2026-06-21 19:41:25.104 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.CreateGift (GINJ) in 156.8073ms
+2026-06-21 19:41:25.106 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.CreateGift (GINJ)'
+2026-06-21 19:41:25.108 +05:30 [INF] HTTP POST /api/admin-lists/gifts responded 201 in 166.7337 ms
+2026-06-21 19:41:25.111 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/admin-lists/gifts - 201 null application/json; charset=utf-8 171.8524ms
+2026-06-21 19:41:25.115 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:25.118 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:25.119 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:25.121 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:25.126 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:25.129 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:25.130 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.2747ms
+2026-06-21 19:41:25.131 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:25.132 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.5666 ms
+2026-06-21 19:41:25.134 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 18.3143ms
+2026-06-21 19:41:27.923 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:27.933 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:27.938 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:27.939 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:27.948 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:27.954 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:27.957 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 14.1769ms
+2026-06-21 19:41:27.958 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:27.958 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:27.959 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 25.3207 ms
+2026-06-21 19:41:27.961 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:27.963 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 39.8631ms
+2026-06-21 19:41:27.964 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:27.968 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:27.972 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:27.974 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:27.975 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 5.4047ms
+2026-06-21 19:41:27.976 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:27.977 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 15.9251 ms
+2026-06-21 19:41:27.978 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 20.0524ms
+2026-06-21 19:41:30.563 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:30.566 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:30.567 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:30.569 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:30.573 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:30.575 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:30.577 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 5.912ms
+2026-06-21 19:41:30.577 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:30.578 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:30.580 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:30.581 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.7390 ms
+2026-06-21 19:41:30.582 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:30.583 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 19.7644ms
+2026-06-21 19:41:30.583 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:30.588 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:30.592 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:30.593 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.8499ms
+2026-06-21 19:41:30.595 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:30.596 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 15.2768 ms
+2026-06-21 19:41:30.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 20.2868ms
+2026-06-21 19:41:35.106 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:35.111 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:35.112 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:35.113 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:35.121 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:35.123 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:35.125 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 9.1532ms
+2026-06-21 19:41:35.125 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:35.126 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:35.128 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:35.129 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 18.8584 ms
+2026-06-21 19:41:35.131 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:35.133 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 26.303ms
+2026-06-21 19:41:35.135 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:35.141 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:35.143 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:35.143 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 4.6253ms
+2026-06-21 19:41:35.144 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:35.145 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 17.0616 ms
+2026-06-21 19:41:35.147 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 21.3927ms
+2026-06-21 19:41:38.285 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:38.285 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:38.289 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:38.291 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:38.292 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:38.293 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:38.293 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:38.294 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:38.303 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:38.305 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:38.306 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 8.9333ms
+2026-06-21 19:41:38.306 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:38.307 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:38.309 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:38.309 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 20.5371 ms
+2026-06-21 19:41:38.310 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 11.6579ms
+2026-06-21 19:41:38.312 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 27.1908ms
+2026-06-21 19:41:38.313 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:38.318 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 26.1283 ms
+2026-06-21 19:41:38.319 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 33.8534ms
+2026-06-21 19:41:47.698 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:47.700 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:47.701 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:47.702 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:47.706 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:47.709 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:47.710 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 6.2603ms
+2026-06-21 19:41:47.711 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 19:41:47.712 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:47.714 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:47.714 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.0211 ms
+2026-06-21 19:41:47.715 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:47.717 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 18.7235ms
+2026-06-21 19:41:47.718 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 19:41:47.724 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 19:41:47.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:47.728 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 5.4181ms
+2026-06-21 19:41:47.730 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 19:41:47.731 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 16.9405 ms
+2026-06-21 19:41:47.733 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 21.9899ms
+2026-06-21 19:41:56.978 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:56.982 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:56.983 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:56.985 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:56.988 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:56.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:56.991 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 5.418ms
+2026-06-21 19:41:56.992 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:41:56.993 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:56.995 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:41:56.995 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 13.5584 ms
+2026-06-21 19:41:56.996 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:56.998 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 19.7101ms
+2026-06-21 19:41:56.998 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:41:57.005 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:41:57.008 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:41:57.009 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.2405ms
+2026-06-21 19:41:57.011 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:41:57.012 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 17.1874 ms
+2026-06-21 19:41:57.014 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 21.9692ms
+2026-06-21 19:42:25.286 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:42:25.286 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 19:42:25.290 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:42:25.291 +05:30 [INF] CORS policy execution successful.
+2026-06-21 19:42:25.292 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:42:25.293 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:42:25.294 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:42:25.294 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 19:42:25.415 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:42:25.415 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 19:42:25.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:42:25.425 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 19:42:25.426 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 126.8584ms
+2026-06-21 19:42:25.428 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 130.7307ms
+2026-06-21 19:42:25.432 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:42:25.433 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 19:42:25.434 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 142.7491 ms
+2026-06-21 19:42:25.435 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 145.1983 ms
+2026-06-21 19:42:25.439 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 152.7126ms
+2026-06-21 19:42:25.441 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 154.4358ms
+2026-06-21 20:19:59.814 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 20:19:59.824 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:19:59.825 +05:30 [INF] HTTP GET /api/admin-lists/users responded 404 in 0.9547 ms
+2026-06-21 20:19:59.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 404 0 null 44.5111ms
+2026-06-21 20:19:59.830 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/admin-lists/users, Response status code: 404
+2026-06-21 20:19:59.832 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 20:19:59.833 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:19:59.835 +05:30 [INF] HTTP GET /api/admin-lists/users responded 404 in 1.3488 ms
+2026-06-21 20:19:59.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 404 0 null 4.9737ms
+2026-06-21 20:19:59.839 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/admin-lists/users, Response status code: 404
+2026-06-21 20:21:29.435 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:21:29.446 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:21:29.447 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:21:29.449 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:21:29.481 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:21:29.484 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:21:29.486 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 35.2073ms
+2026-06-21 20:21:29.488 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:21:29.489 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 42.3294 ms
+2026-06-21 20:21:29.490 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 57.3094ms
+2026-06-21 20:21:29.492 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:21:29.494 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:21:29.495 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:21:29.496 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:21:29.500 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:21:29.502 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:21:29.504 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 6.2135ms
+2026-06-21 20:21:29.505 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:21:29.506 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 11.3930 ms
+2026-06-21 20:21:29.507 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 14.4783ms
+2026-06-21 20:34:57.396 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE WHEN COUNT(*) = 0 THEN FALSE ELSE TRUE END
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE' AND table_schema = 'GINJ'
+2026-06-21 20:34:57.639 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Rhymes` AS `r`)
+2026-06-21 20:34:57.647 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`)
+2026-06-21 20:34:57.682 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Drawing Pad')
+2026-06-21 20:34:57.688 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Toy Ball')
+2026-06-21 20:34:57.694 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Gifts` AS `g`
+    WHERE `g`.`Name` = 'Story Book')
+2026-06-21 20:34:57.793 +05:30 [INF] User profile is available. Using 'C:\Users\LENOVO\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-21 20:34:57.870 +05:30 [INF] Now listening on: http://0.0.0.0:5000
+2026-06-21 20:34:57.872 +05:30 [INF] Now listening on: https://0.0.0.0:5001
+2026-06-21 20:34:57.873 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-21 20:34:57.874 +05:30 [INF] Hosting environment: Development
+2026-06-21 20:34:57.875 +05:30 [INF] Content root path: D:\Projects\GINJ\api
+2026-06-21 20:35:26.143 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:35:26.190 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:35:26.205 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:35:26.339 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:35:26.460 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:35:26.515 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 304.7079ms
+2026-06-21 20:35:26.520 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:35:26.524 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 348.6940 ms
+2026-06-21 20:35:26.537 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 394.94ms
+2026-06-21 20:38:21.952 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:38:21.952 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:38:21.970 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:38:21.971 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:38:21.976 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:38:21.976 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:38:21.978 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:38:21.979 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:38:22.069 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:38:22.075 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:38:22.079 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 96.7577ms
+2026-06-21 20:38:22.080 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:38:22.082 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 116.6232 ms
+2026-06-21 20:38:22.084 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 131.84ms
+2026-06-21 20:38:22.099 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:38:22.104 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:38:22.106 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 121.0219ms
+2026-06-21 20:38:22.108 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:38:22.109 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 144.0959 ms
+2026-06-21 20:38:22.112 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 159.4963ms
+2026-06-21 20:38:43.159 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/addresses - null null
+2026-06-21 20:38:43.164 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:38:43.167 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ)'
+2026-06-21 20:38:43.172 +05:30 [INF] Route matched with {action = "GetParentAddresses", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParentAddresses() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 20:38:43.200 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Phone`, `p`.`SavedAddress`, `p`.`CreatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 20:38:43.202 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:38:43.212 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ) in 36.9953ms
+2026-06-21 20:38:43.213 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/addresses - null null
+2026-06-21 20:38:43.213 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ)'
+2026-06-21 20:38:43.215 +05:30 [INF] HTTP GET /api/admin-lists/addresses responded 200 in 52.1881 ms
+2026-06-21 20:38:43.216 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:38:43.218 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/addresses - 200 null application/json; charset=utf-8 58.9897ms
+2026-06-21 20:38:43.218 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ)'
+2026-06-21 20:38:43.222 +05:30 [INF] Route matched with {action = "GetParentAddresses", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetParentAddresses() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 20:38:43.230 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Phone`, `p`.`SavedAddress`, `p`.`CreatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 20:38:43.232 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType4`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:38:43.233 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ) in 9.3396ms
+2026-06-21 20:38:43.234 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetParentAddresses (GINJ)'
+2026-06-21 20:38:43.235 +05:30 [INF] HTTP GET /api/admin-lists/addresses responded 200 in 18.9846 ms
+2026-06-21 20:38:43.236 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/addresses - 200 null application/json; charset=utf-8 23.5586ms
+2026-06-21 20:40:06.919 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:40:06.924 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:40:06.926 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:40:06.929 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:40:06.939 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:40:06.945 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:40:06.947 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 12.5922ms
+2026-06-21 20:40:06.948 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 20:40:06.948 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:40:06.950 +05:30 [INF] CORS policy execution successful.
+2026-06-21 20:40:06.950 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 26.7702 ms
+2026-06-21 20:40:06.951 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:40:06.953 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 33.1875ms
+2026-06-21 20:40:06.954 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 20:40:06.961 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 20:40:06.963 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 20:40:06.965 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.9526ms
+2026-06-21 20:40:06.966 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 20:40:06.967 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 17.4987 ms
+2026-06-21 20:40:06.969 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 20.9099ms
+2026-06-21 21:04:54.749 +05:30 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2026-06-21 21:04:55.330 +05:30 [INF] HTTP GET / responded 404 in 0.7440 ms
+2026-06-21 21:04:55.499 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 404 0 null 749.8697ms
+2026-06-21 21:04:55.850 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5001/, Response status code: 404
+2026-06-21 21:06:05.578 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:06:05.578 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:06:05.584 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:05.595 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:05.598 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:05.602 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:05.604 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:06:05.606 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:06:05.674 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:06:05.674 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:06:05.683 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:05.687 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:05.691 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 79.9422ms
+2026-06-21 21:06:05.694 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 76.0772ms
+2026-06-21 21:06:05.697 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:05.701 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:05.704 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 119.8141 ms
+2026-06-21 21:06:05.708 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 112.7555 ms
+2026-06-21 21:06:05.714 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 135.3356ms
+2026-06-21 21:06:05.720 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 142.4606ms
+2026-06-21 21:06:22.547 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:06:22.551 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:22.553 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:22.565 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:06:22.597 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:06:22.604 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:22.610 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 40.2414ms
+2026-06-21 21:06:22.611 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:06:22.613 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:22.620 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:22.622 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 70.9951 ms
+2026-06-21 21:06:22.624 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:22.629 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 82.3912ms
+2026-06-21 21:06:22.631 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:06:22.647 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:06:22.652 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:22.656 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 12.9784ms
+2026-06-21 21:06:22.659 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:22.662 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 42.2252 ms
+2026-06-21 21:06:22.668 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 56.0128ms
+2026-06-21 21:06:38.898 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/users/remove-duplicates - null null
+2026-06-21 21:06:38.909 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:38.913 +05:30 [INF] HTTP OPTIONS /api/admin-lists/users/remove-duplicates responded 204 in 4.0012 ms
+2026-06-21 21:06:38.918 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/admin-lists/users/remove-duplicates - 204 null null 19.8472ms
+2026-06-21 21:06:38.925 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/admin-lists/users/remove-duplicates - application/json 2
+2026-06-21 21:06:38.931 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:38.934 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.RemoveDuplicateUsers (GINJ)'
+2026-06-21 21:06:38.945 +05:30 [INF] Route matched with {action = "RemoveDuplicateUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveDuplicateUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:06:39.009 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.RemoveDuplicateUsers (GINJ) in 58.2541ms
+2026-06-21 21:06:39.013 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.RemoveDuplicateUsers (GINJ)'
+2026-06-21 21:06:39.016 +05:30 [ERR] HTTP POST /api/admin-lists/users/remove-duplicates responded 500 in 85.0609 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Parent>()
+    .GroupBy(p => p.Phone)
+    .Where(g => g
+        .AsQueryable()
+        .Count() > 1)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Controllers.AdminListsController.RemoveDuplicateUsers() in D:\Projects\GINJ\api\Controllers\AdminListsController.cs:line 134
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-21 21:06:39.088 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The LINQ expression 'DbSet<Parent>()
+    .GroupBy(p => p.Phone)
+    .Where(g => g
+        .AsQueryable()
+        .Count() > 1)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at GINJ.Controllers.AdminListsController.RemoveDuplicateUsers() in D:\Projects\GINJ\api\Controllers\AdminListsController.cs:line 134
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-06-21 21:06:39.128 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/admin-lists/users/remove-duplicates - 500 null text/plain; charset=utf-8 203.3256ms
+2026-06-21 21:06:42.242 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:06:42.247 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:42.250 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:42.253 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:06:42.261 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:06:42.267 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:42.271 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 14.1035ms
+2026-06-21 21:06:42.274 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:06:42.277 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 30.3534 ms
+2026-06-21 21:06:42.282 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 40.0262ms
+2026-06-21 21:06:48.675 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:06:48.679 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:48.681 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:48.684 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:06:48.693 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:06:48.699 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:48.703 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 14.4498ms
+2026-06-21 21:06:48.706 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:06:48.706 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:48.712 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:06:48.714 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 35.7082 ms
+2026-06-21 21:06:48.717 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:48.722 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 47.6865ms
+2026-06-21 21:06:48.724 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:06:48.742 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:06:48.748 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:06:48.753 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 16.646ms
+2026-06-21 21:06:48.757 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:06:48.760 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 48.8009 ms
+2026-06-21 21:06:48.766 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 60.0569ms
+2026-06-21 21:13:00.402 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:00.402 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:00.408 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:00.414 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:00.416 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:00.417 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:00.419 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:00.421 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:00.465 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:00.471 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:00.471 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:00.476 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:00.479 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 53.9571ms
+2026-06-21 21:13:00.481 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 51.932ms
+2026-06-21 21:13:00.483 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:00.485 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:00.487 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 78.9707 ms
+2026-06-21 21:13:00.489 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 75.7980 ms
+2026-06-21 21:13:00.494 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 91.3889ms
+2026-06-21 21:13:00.496 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 93.8928ms
+2026-06-21 21:13:19.923 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 21:13:19.926 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:19.927 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 21:13:19.933 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:19.943 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 21:13:19.946 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:19.948 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 12.9524ms
+2026-06-21 21:13:19.949 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - null null
+2026-06-21 21:13:19.949 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 21:13:19.951 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:19.952 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 25.7467 ms
+2026-06-21 21:13:19.952 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 21:13:19.953 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 30.7732ms
+2026-06-21 21:13:19.954 +05:30 [INF] Route matched with {action = "GetRhymes", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRhymes() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:19.960 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`
+FROM `Rhymes` AS `r`
+2026-06-21 21:13:19.962 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Rhyme, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:19.963 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetRhymes (GINJ) in 4.9919ms
+2026-06-21 21:13:19.964 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetRhymes (GINJ)'
+2026-06-21 21:13:19.965 +05:30 [INF] HTTP GET /api/admin-lists/rhymes responded 200 in 13.7788 ms
+2026-06-21 21:13:19.966 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/rhymes - 200 null application/json; charset=utf-8 17.1371ms
+2026-06-21 21:13:21.074 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 21:13:21.078 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:21.079 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 21:13:21.085 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:21.096 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 21:13:21.099 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:21.101 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 14.7759ms
+2026-06-21 21:13:21.102 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - null null
+2026-06-21 21:13:21.102 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 21:13:21.104 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:21.105 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 26.7510 ms
+2026-06-21 21:13:21.105 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 21:13:21.107 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 32.2746ms
+2026-06-21 21:13:21.108 +05:30 [INF] Route matched with {action = "GetGifts", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetGifts() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:21.113 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`
+FROM `Gifts` AS `g`
+2026-06-21 21:13:21.115 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Gift, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:21.116 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetGifts (GINJ) in 5.2214ms
+2026-06-21 21:13:21.117 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetGifts (GINJ)'
+2026-06-21 21:13:21.118 +05:30 [INF] HTTP GET /api/admin-lists/gifts responded 200 in 14.1655 ms
+2026-06-21 21:13:21.120 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/gifts - 200 null application/json; charset=utf-8 17.5761ms
+2026-06-21 21:13:22.137 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:13:22.141 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:22.142 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:22.143 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:22.147 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:13:22.150 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:22.152 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 6.6856ms
+2026-06-21 21:13:22.153 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:22.154 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:13:22.154 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 13.5940 ms
+2026-06-21 21:13:22.156 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:22.157 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 20.5316ms
+2026-06-21 21:13:22.158 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:22.161 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:22.164 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:13:22.167 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:22.168 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 5.6416ms
+2026-06-21 21:13:22.170 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:22.171 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 15.1960 ms
+2026-06-21 21:13:22.173 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 18.6474ms
+2026-06-21 21:13:28.157 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:28.157 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:28.160 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:28.162 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:28.164 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:28.163 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:28.169 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:28.170 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:28.174 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:28.174 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:28.176 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:28.177 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:28.178 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.1495ms
+2026-06-21 21:13:28.179 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 7.0333ms
+2026-06-21 21:13:28.180 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:28.182 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:28.183 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 21.0650 ms
+2026-06-21 21:13:28.184 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 24.4588 ms
+2026-06-21 21:13:28.186 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 28.7023ms
+2026-06-21 21:13:28.187 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 30.285ms
+2026-06-21 21:13:30.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:13:30.437 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:30.438 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:30.439 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:30.443 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:13:30.445 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:30.446 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 5.9739ms
+2026-06-21 21:13:30.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - null null
+2026-06-21 21:13:30.448 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:30.449 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:30.450 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 13.0643 ms
+2026-06-21 21:13:30.452 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:30.452 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 18.0789ms
+2026-06-21 21:13:30.453 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller GINJ.Controllers.AdminListsController (GINJ).
+2026-06-21 21:13:30.458 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`
+FROM `Parents` AS `p`
+ORDER BY `p`.`CreatedAt` DESC
+2026-06-21 21:13:30.460 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Parent, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:30.461 +05:30 [INF] Executed action GINJ.Controllers.AdminListsController.GetUsers (GINJ) in 4.9437ms
+2026-06-21 21:13:30.462 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminListsController.GetUsers (GINJ)'
+2026-06-21 21:13:30.463 +05:30 [INF] HTTP GET /api/admin-lists/users responded 200 in 13.9643 ms
+2026-06-21 21:13:30.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin-lists/users - 200 null application/json; charset=utf-8 17.6968ms
+2026-06-21 21:13:34.945 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:34.948 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:34.949 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:34.950 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:34.954 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:34.956 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:34.958 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 6.3729ms
+2026-06-21 21:13:34.959 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - null null
+2026-06-21 21:13:34.959 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:34.961 +05:30 [INF] CORS policy execution successful.
+2026-06-21 21:13:34.961 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 13.2512 ms
+2026-06-21 21:13:34.962 +05:30 [INF] Executing endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:34.964 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 18.7566ms
+2026-06-21 21:13:34.965 +05:30 [INF] Route matched with {action = "GetPendingSubmissions", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingSubmissions() on controller GINJ.Controllers.AdminController (GINJ).
+2026-06-21 21:13:34.971 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Address`, `s`.`ChildProfileId`, `s`.`CreatedAt`, `s`.`GiftId`, `s`.`ParentId`, `s`.`RejectedAt`, `s`.`ReviewNotes`, `s`.`RhymeId`, `s`.`Status`, `s`.`UpdatedAt`, `s`.`WhatsAppTestStatus`, `p`.`Id`, `p`.`ConsentAccepted`, `p`.`CreatedAt`, `p`.`PasswordHash`, `p`.`Phone`, `p`.`PhoneVerified`, `p`.`SavedAddress`, `p`.`UpdatedAt`, `c`.`Id`, `c`.`Age`, `c`.`CreatedAt`, `c`.`DateOfBirth`, `c`.`FatherName`, `c`.`InternalScore`, `c`.`Name`, `c`.`ParentId`, `c`.`Sex`, `c`.`UpdatedAt`, `r`.`Id`, `r`.`AgeGroup`, `r`.`Description`, `r`.`IsActive`, `r`.`IsThisGurbani`, `r`.`ScoreRequirement`, `r`.`Title`, `r`.`YoutubeUrl`, `g`.`Id`, `g`.`AvailableStock`, `g`.`Description`, `g`.`EligibilityCriteria`, `g`.`ImageUrl`, `g`.`IsActive`, `g`.`MinimumScore`, `g`.`Name`, `d`.`Id`, `d`.`CreatedAt`, `d`.`DeliveredAt`, `d`.`DeliveryStatus`, `d`.`DispatchedAt`, `d`.`DocketNumber`, `d`.`SubmissionId`, `d`.`UpdatedAt`
+FROM `Submissions` AS `s`
+INNER JOIN `Parents` AS `p` ON `s`.`ParentId` = `p`.`Id`
+INNER JOIN `ChildProfiles` AS `c` ON `s`.`ChildProfileId` = `c`.`Id`
+INNER JOIN `Rhymes` AS `r` ON `s`.`RhymeId` = `r`.`Id`
+INNER JOIN `Gifts` AS `g` ON `s`.`GiftId` = `g`.`Id`
+LEFT JOIN `Dispatches` AS `d` ON `s`.`Id` = `d`.`SubmissionId`
+WHERE `s`.`Status` = 0
+2026-06-21 21:13:34.973 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GINJ.Models.Submission, GINJ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-21 21:13:34.974 +05:30 [INF] Executed action GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ) in 5.6658ms
+2026-06-21 21:13:34.975 +05:30 [INF] Executed endpoint 'GINJ.Controllers.AdminController.GetPendingSubmissions (GINJ)'
+2026-06-21 21:13:34.976 +05:30 [INF] HTTP GET /api/admin/pending-submissions responded 200 in 14.8610 ms
+2026-06-21 21:13:34.977 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/pending-submissions - 200 null application/json; charset=utf-8 18.3201ms
